@@ -43,3 +43,7 @@ https://testingjavascript.com/courses/fundamentals-of-testing-in-javascript
     ```javascript
     $ node 04-support-async-tests.js
     ```
+
+    In order to allow async tests to be run, we need our `test` function to be
+    `async`, and we need to prepend the callack invocation with `await`.
+
