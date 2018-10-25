@@ -47,3 +47,25 @@ https://testingjavascript.com/courses/fundamentals-of-testing-in-javascript
     In order to allow async tests to be run, we need our `test` function to be
     `async`, and we need to prepend the callack invocation with `await`.
 
+5. [Provide Testing Helper Functions as Globals in JavaScript](./05-provide-testing-helpers-as-globals.js)
+
+    ```javascript
+    $ node --require ./setup-globals.js 05-provide-testing-helpers-as-globals.js
+    ```
+
+    Because of the usefulness of test utilities one could extract them into a
+    module and import them everywhere.
+
+    Another strategy, because we're in a test environment and globals are
+    pragmatic in this situation, is to make the helpers available globally.
+
+    The `--require ./[file].js` flag allows files to be required before
+    executing scripts with the `node` command
+
+6. [Verify Custom JavaScript Tests with Jest](./06-verify-custom-js-tests-with-jest.test.js)
+
+    ```javascript
+    $ npx jest
+    ```
+
+    We've implemented the Jest API in our tests, so we can instead run Jest.
