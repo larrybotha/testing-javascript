@@ -1,0 +1,14 @@
+{
+  "name": "02-static-analysis-testing-javascript-applications",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-configuring-eslint.js",
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "5.7.0"
+  }
+}
