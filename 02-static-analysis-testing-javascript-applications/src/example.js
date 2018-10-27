@@ -1,11 +1,11 @@
-const name = 'Freddy';
-typeof name === 'strng';
+const name = "Freddy";
+typeof name === "strng";
 
-if (!'serviceWorker' in navigator) {
+if (!"serviceWorker" in navigator) {
   // old browser
 }
 
-const greeting = 'hello';
+const greeting = "hello";
 console
   .log(`${greting} world`)
 
