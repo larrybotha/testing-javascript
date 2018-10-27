@@ -4,11 +4,16 @@
   "description": "",
   "main": "01-configuring-eslint.js",
   "scripts": {
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "format": "prettier --write \"**/*.+(js|json|yml|yaml|css|scss|ts|tsx|md|mdx|graphql)\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "5.7.0"
+    "eslint": "5.7.0",
+    "prettier": "1.14.3"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "3.1.0"
   }
 }
