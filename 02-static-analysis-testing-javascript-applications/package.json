@@ -7,12 +7,15 @@
     "lint": "eslint src",
     "prettier": "prettier \"**/*.+(js|json|yml|yaml|css|scss|ts|tsx|md|mdx|graphql)\"",
     "format": "npm run prettier -- --write",
-    "validate": "npm run prettier -- --list-different"
+    "validate": "npm run prettier -- --list-different && npm run flow",
+    "flow": "flow"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "10.0.1",
     "eslint": "5.7.0",
+    "flow-bin": "0.84.0",
     "prettier": "1.14.3"
   },
   "dependencies": {

@@ -66,3 +66,8 @@
    $ npm run myscript:alpha
    myscript --some-flag
    ```
+
+6. Avoid Common Errors with Flow Type Definitions
+
+   Use `@flow` at the top of files that you want to use `flow` to make type
+   strict after installing `flow-bin` as a dev dependency.
