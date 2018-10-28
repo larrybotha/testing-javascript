@@ -71,3 +71,8 @@
 
    Use `@flow` at the top of files that you want to use `flow` to make type
    strict after installing `flow-bin` as a dev dependency.
+
+7. Validate Code in a pre-commit git Hook with husky
+
+   `husky` works in a similar way to `ghooks`, except that you add npm scripts
+   to run pre and post-hooks.
