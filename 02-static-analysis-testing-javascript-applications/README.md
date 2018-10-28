@@ -39,3 +39,30 @@
    `extend`ed eslint configs take precedence from the end of the array.
 
    `rules` in the the eslint config take precedence over any extensions.
+
+5. Validate all files are formatted when linting
+
+   `prettier` can be run with a `--list-different` flag which exits with a
+   non-zero code if there are any files that are not formatted correctly. This
+   can be used with `ghooks` to ensure all team members are using `prettier`.
+
+   npm scripts can forward command line arguments to each other using the `--`
+   operator:
+
+   ```json
+     ...
+     "scripts": {
+       "myscript": "some-command",
+       "myscript:alpha": "npm run myscript -- --some-flag"
+     }
+     ...
+   ```
+
+   ```bash
+   $ npm run myscript
+   myscript
+   ...
+
+   $ npm run myscript:alpha
+   myscript --some-flag
+   ```

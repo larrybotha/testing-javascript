@@ -5,7 +5,9 @@
   "main": "01-configuring-eslint.js",
   "scripts": {
     "lint": "eslint src",
-    "format": "prettier --write \"**/*.+(js|json|yml|yaml|css|scss|ts|tsx|md|mdx|graphql)\""
+    "prettier": "prettier \"**/*.+(js|json|yml|yaml|css|scss|ts|tsx|md|mdx|graphql)\"",
+    "format": "npm run prettier -- --write",
+    "validate": "npm run prettier -- --list-different"
   },
   "author": "",
   "license": "ISC",
