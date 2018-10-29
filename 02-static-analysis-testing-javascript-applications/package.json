@@ -8,7 +8,8 @@
     "prettier": "prettier \"**/*.+(js|json|yml|yaml|css|scss|ts|tsx|md|mdx|graphql)\"",
     "format": "npm run prettier -- --write",
     "validate": "npm run prettier -- --list-different && npm run flow",
-    "flow": "flow"
+    "flow": "flow",
+    "precommit": "lint-staged"
   },
   "author": "",
   "license": "ISC",
@@ -17,9 +18,20 @@
     "eslint": "5.7.0",
     "flow-bin": "0.84.0",
     "husky": "1.1.2",
+    "lint-staged": "7.3.0",
     "prettier": "1.14.3"
   },
   "dependencies": {
     "eslint-config-prettier": "3.1.0"
+  },
+  "lint-staged": {
+    "*.--write": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

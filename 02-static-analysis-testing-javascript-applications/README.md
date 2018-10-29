@@ -76,3 +76,11 @@
 
    `husky` works in a similar way to `ghooks`, except that you add npm scripts
    to run pre and post-hooks.
+
+8. Auto-format all files and validate relevant files in a precommit script with
+   `lint-staged`
+
+   `lint-staged` not only allows linters to be run on precommit, but allows one
+   to define commands to be run should linting pass, allowing for repo owners to
+   have autoformatting run and changed files staged without relying on
+   collaborators to have autoformatters enabled.
