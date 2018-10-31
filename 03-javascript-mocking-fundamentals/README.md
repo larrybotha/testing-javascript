@@ -1,9 +1,12 @@
 # JavaScript Mocking Fundamentals
 
-1. [Override Object Properties to Mock with Monkey-patching in JavaScript](./ 01-override-object-props-to-mock-with-monkey-patching.js)
+1. [Override Object Properties to Mock with Monkey-patching in JavaScript](./01-override-object-props-to-mock-with-monkey-patching.no-framework.test.js)
 
    ```bash
-   $ node 01-override-object-props-to-mock-with-monkey-patching.test.js
+   $ node 01-override-object-props-to-mock-with-monkey-patching.no-framework.js
+
+   # or
+   $ npx jest 01
    ```
 
    We import both `thumb-war` and `utils`, and mock out `utils.getWinner` so
