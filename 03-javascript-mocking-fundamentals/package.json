@@ -1,0 +1,15 @@
+{
+  "name": "03-javascript-mocking-fundamentals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "assert": "1.4.1",
+    "jest": "23.6.0"
+  }
+}
