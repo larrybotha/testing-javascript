@@ -16,3 +16,25 @@
 
    After mocking, one should always clean up so that subsequent tests are not
    affected by the mock.
+
+2. [Ensure Functions are Called Correctly with JavaScript Mocks](./02-ensure-functions-are-called-correctly-with-javascript-mocks.test.js)
+
+   ```bash
+   $ node
+   02-ensure-functions-are-called-correctly-with-javascript-mocks.no-framework.js
+
+   # or
+   $ npx jest 02
+   ```
+
+   We can create a naive `jest.fn` which takes a mock implementation, and
+   accepts all arguments passed to it.
+
+   Onto this mock function we can add a `mock` object where we can store calls
+   to the mock function.
+
+   This can all be done using `jest.fn`.
+
+   Jest allows one to inspect a mocked function using `toHaveBeenCalledWith`,
+   `toHaveBeenNthCalledWith`, or to inspect `mockFn.mock.calls` to inspect how
+   the function was used for all calls.
