@@ -20,8 +20,7 @@
 2. [Ensure Functions are Called Correctly with JavaScript Mocks](./02-ensure-functions-are-called-correctly-with-javascript-mocks.test.js)
 
    ```bash
-   $ node
-   02-ensure-functions-are-called-correctly-with-javascript-mocks.no-framework.js
+   $ node 02-ensure-functions-are-called-correctly-with-javascript-mocks.no-framework.js
 
    # or
    $ npx jest 02
