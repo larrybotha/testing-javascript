@@ -20,8 +20,7 @@
 2. [Ensure Functions are Called Correctly with JavaScript Mocks](./02-ensure-functions-are-called-correctly-with-javascript-mocks.test.js)
 
    ```bash
-   $ node
-   02-ensure-functions-are-called-correctly-with-javascript-mocks.no-framework.js
+   $ node 02-ensure-functions-are-called-correctly-with-javascript-mocks.no-framework.js
 
    # or
    $ npx jest 02
@@ -38,3 +37,24 @@
    Jest allows one to inspect a mocked function using `toHaveBeenCalledWith`,
    `toHaveBeenNthCalledWith`, or to inspect `mockFn.mock.calls` to inspect how
    the function was used for all calls.
+
+3. [Restore the Original Implementation of a Mocked JavaScript Function with jest.spyOn](./ 03-restore-original-implementation-of-a-mocked-function.test.js)
+
+   ```bash
+   $ npx jest 03
+
+   # or
+   $ node 03-restore-original-implementation-of-a-mocked-function.no-framework.js
+   ```
+
+   An alternative to using jest.fn to replace a function with a mock
+   implementation is to use `jest.spyOn` to create a mock implementation. This
+   mitigates us having to store the original function and replace it, as Jest
+   will do the heavy lifting for us.
+
+   1. Use `jest.spyOn(myObject, 'myObjectFn')`
+   2. Use `myObject.myObjectFn.mockImplementation(mockFn)` to create a mock
+      implementation of `myObjectFn`
+   3. Once done testing the implementation, use
+      `myObject.myObjectFn.mockRestore()` to replace the mock implementation with
+      the original so that other tests are not affected
