@@ -81,3 +81,12 @@
    Instead of using `mock.mockRestore()` to restore the mock implementation, we now
    use `mock.mockReset()`. `mock.mockRestore()` is only available for mocks
    created with `jest.spyOn`
+
+   ***
+
+   `jest.mock` takes control of the entire module requiring system. This can be
+   simulated using `require.cache`. `require.cache` is an object that has keys
+   for each import, with each key being associated with an object containining
+   information regarding the import.
+
+   We use the `exports` property to create the mock implementation of the module
