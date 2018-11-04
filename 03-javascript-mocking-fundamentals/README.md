@@ -57,4 +57,27 @@
       implementation of `myObjectFn`
    3. Once done testing the implementation, use
       `myObject.myObjectFn.mockRestore()` to replace the mock implementation with
-      the original so that other tests are not affected
+      the original so that other tests are not affected. `.mockRestore()`
+      restores the mock implementation to its pre-mocked definition
+
+4. [Mock a JavaScript module in a test](./04-mock-a-js-module-in-a-test.test.js)
+
+   ```bash
+   $ npx jest 04
+
+   # or
+   $ node 04-mock-a-js-module-in-a-test.no-framework.js
+   ```
+
+   Using `jest.spyOn` is still a form of monkey-patching. Monkey-patching is
+   great for our own modules, because we're using commonjs's `require`. When
+   working in an es environment we'll have to mock an entire module, and
+   `jest.mock` allows one to do this.
+
+   When using `jest.mock` we can create the mock implementation inside of the
+   mock, and no longer need to use `jest.spyOn` and
+   `[fnToMock].mockImplementation`.
+
+   Instead of using `mock.mockRestore()` to restore the mock implementation, we now
+   use `mock.mockReset()`. `mock.mockRestore()` is only available for mocks
+   created with `jest.spyOn`
