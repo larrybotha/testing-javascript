@@ -93,3 +93,30 @@
    information regarding the import.
 
    We use the `exports` property to create the mock implementation of the module
+
+5. [Make a shared JavaScript mock module](./05-make-a-shared-mock-module.test.js)
+
+   ```bash
+   $ npx jest 05
+
+   # or
+   $ node 05-make-a-shared-mock-module.no-framework.js
+   ```
+
+   We can have tests automatically use the mock of a module by adding the mock
+   to a `__mocks__` folder. Node modules can be placed in the `root` `__mocks__`
+   that Jest inspects, by default adjacent to `node_modules`. For user-defined
+   `modules` they can be placed in a `__mocks__` folder adjacent to the module.
+   The mock must use the same filename as the mocked module.
+
+   For user-defined modules, if the test imports the module, then
+   `jest.mock('./path/to/mock')` must be added to the test file.
+
+   ***
+
+   Similarly to how we simulated what Jest is doing when conrolling module
+   requiring by using `require.cache`. We create a file containing the mock,
+   which also uses our `fn` to allow us to evaluate calls. In our test we import
+   our mock, and then retrieve the cached paths for the actual utils and mock
+   utils, rewriting `require.cache`'s key for the actual utils with the mocked
+   utils.
