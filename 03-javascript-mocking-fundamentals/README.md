@@ -82,6 +82,9 @@
    use `mock.mockReset()`. `mock.mockRestore()` is only available for mocks
    created with `jest.spyOn`
 
+   `jest.mock` can be placed anywhere in the file, and Jest will hoist it to the
+   top of the file.
+
    ***
 
    `jest.mock` takes control of the entire module requiring system. This can be

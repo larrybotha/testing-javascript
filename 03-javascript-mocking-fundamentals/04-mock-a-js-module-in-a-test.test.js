@@ -4,6 +4,8 @@ const utils = require('./src/utils');
 // instead of monkey-patching utils, we can mock it out entirely using jest.mock
 // This works because we're using common js, but if we were using es6 imports
 // then monkey-patching woujldn't work. We'd have to mock any imported modules
+// Jest hoists this mock to the top of the file, so we don't need to worry about
+// placing it before thea actual imports.
 jest.mock('./src/utils', () => {
   return {
     getWinner: jest.fn((p1, _) => p1),
