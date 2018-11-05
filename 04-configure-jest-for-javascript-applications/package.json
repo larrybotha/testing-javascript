@@ -1,0 +1,16 @@
+{
+  "name": "04-configure-jest-for-javascript-applications",
+  "version": "1.0.0",
+  "description": "1. [Install and run Jest](./01-install-and-run-jest.test.js)",
+  "main": "01-transpile-modules-with-babel-in-jest-tests.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "7.1.0",
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0"
+  }
+}
