@@ -53,3 +53,13 @@
    ```bash
    $ npx jest 04
    ```
+
+   Importing `.css` and other asset files into Javascript files is non-standard
+   JS, and one of the reasons behind using loaders in webpack.
+
+   When running our tests, Node knows nothing about the `.css` import in
+   `auto-scaling-text.js`, and simply expects it to be a node module, which it
+   isn't.
+
+   To get around this, we can configure Jest to import files we specify using
+   `moduleNameMapper` in `jest.config.js`.
