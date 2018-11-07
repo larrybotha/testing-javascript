@@ -26,3 +26,24 @@
 
    We didn't need to configure Jest at all. Jest picks up our `babelrc.js` and
    uses that to run tests.
+
+3. [Configure Jest’s test environment for testing node or browser code](./03-configure-jest-test-environment-for-node-or-browser.test.js)
+
+   ```bash
+   $ npx jest 03
+   ```
+
+   Jest automatically requires `jsdom` to make `window` accessible in our tests.
+   This is useful, but if we're in a Node environment, then we're taking a
+   performance hit by loading a module that we likely don't need.
+
+   We can configure whether `jsdom` is loaded or not by making use of the
+   `testEnvironment` property in `jest.config.js`, or by running Jest with a
+   flag:
+
+   ```bash
+   $ npx jest 03 --env=node
+
+   # or
+   $ npm t -- --env=node
+   ```
