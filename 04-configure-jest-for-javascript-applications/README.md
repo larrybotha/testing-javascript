@@ -47,3 +47,9 @@
    # or
    $ npm t -- --env=node
    ```
+
+4. [Support importing CSS files with Jest’s moduleNameMapper](./04-support-importing-css-files-with-module-name-mapper.test.js)
+
+   ```bash
+   $ npx jest 04
+   ```
