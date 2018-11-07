@@ -11,3 +11,9 @@
    ```bash
    $ npx jest 02
    ```
+
+   To ensure that Jest runs against commonjs Javascript and not ES6, mitigating
+   `import` errors, we need to configure `@babel/preset-env` for the `test`
+   environment in `.babelrc.js`.
+
+   Jest automatically runs with `NODE_ENV` set to `test`.
