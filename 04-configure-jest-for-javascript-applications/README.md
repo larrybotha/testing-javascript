@@ -63,3 +63,5 @@
 
    To get around this, we can configure Jest to import files we specify using
    `moduleNameMapper` in `jest.config.js`.
+
+   This can be usef for svg, graphql, or any other non-node module imports.
