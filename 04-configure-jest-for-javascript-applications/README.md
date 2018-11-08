@@ -65,3 +65,22 @@
    `moduleNameMapper` in `jest.config.js`.
 
    This can be usef for svg, graphql, or any other non-node module imports.
+
+5. [Support using webpack CSS modules with Jest](./05-support-using-webpack-css-modules-with-jest.test.js)
+
+   ```bash
+   $ npx jest 05
+   ```
+
+   CSS modules are converted into objects, but our initial styles mock in the
+   Jest config returns an empty ojbect always, resulting in components importing
+   the CSS as modules always having classNames of `undefined`.
+
+   It'd be more valuable to have some indication that the CSS import is doing
+   something. To do so, we can use `identity-obj-proxy` which is specifically
+   built to improve mocking of imports.
+
+   `moduleNameMapper` is order-dependent, so we add a test to match for
+   `.module.css` before `.css`, which then results in `identity-obj-proxy`
+   outputting a more meaningful class on our component which we can then test
+   for.
