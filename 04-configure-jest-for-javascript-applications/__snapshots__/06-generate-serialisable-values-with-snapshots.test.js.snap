@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalculatorDisplay mounts 1`] = `"<div class=\\"autoScalingText\\" style=\\"transform: scale(1,1);\\">0</div>"`;
+
+exports[`super heros returns super heros that can fly 1`] = `
+Array [
+  Object {
+    "name": "Dynaguy",
+    "powers": Array [
+      "disintegration ray",
+      "fly",
+    ],
+  },
+  Object {
+    "name": "Apogee",
+    "powers": Array [
+      "gravity control",
+      "fly",
+    ],
+  },
+]
+`;
