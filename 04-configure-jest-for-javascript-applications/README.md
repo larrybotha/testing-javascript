@@ -84,3 +84,16 @@
    `.module.css` before `.css`, which then results in `identity-obj-proxy`
    outputting a more meaningful class on our component which we can then test
    for.
+
+6. [Generate a Serializable Value with Jest Snapshots](./06-generate-serialisable-values-with-snapshots.test.js)
+
+   ```bash
+   $ npx jest 06
+   ```
+
+   Jest's `.toMatchSnapshot` serialises objects and evaluates changes to
+   objects.
+
+   `react-testing-library`'s `container` property on the return value of
+   `render` always wraps components in a div. If you want to evaluate your
+   component exclusively, you should use `container.firstChild`
