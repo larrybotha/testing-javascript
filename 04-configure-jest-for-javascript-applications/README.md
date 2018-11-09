@@ -114,5 +114,5 @@
    snapshot.
 
    Other snapshot serializers, such as `jest-serializer-path`, can be used to
-   modify snapshots. `jest-serializer-path` normalises absolute paths to prevent
-   conflicts between different devs' systems.
+   modify snapshots. `jest-serializer-path` normalises absolute paths to project
+   root to prevent conflicts between different devs' systems.
