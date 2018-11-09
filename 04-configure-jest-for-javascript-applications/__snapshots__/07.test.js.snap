@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalculatorDisplay mounts 1`] = `
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 6em;
+  line-height: 130px;
+  position: relative;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  <div
+    class="autoScalingText"
+    style="transform: scale(1,1);"
+  >
+    0
+  </div>
+</div>
+`;
