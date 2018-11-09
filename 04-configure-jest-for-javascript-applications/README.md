@@ -1,12 +1,12 @@
 # Configure Jest for Testing JavaScript Applications
 
-1. [Install and run Jest](./01-install-and-run-jest.test.js)
+1. [Install and run Jest](./01.test.js)
 
    ```bash
    $ npx jest 01
    ```
 
-2. [Transpile modules with babel in Jest tests](./02-transpile-modules-with-babel-in-jest-tests.test.js)
+2. [Transpile modules with babel in Jest tests](./02.test.js)
 
    ```bash
    $ npx jest 02
@@ -27,7 +27,7 @@
    We didn't need to configure Jest at all. Jest picks up our `babelrc.js` and
    uses that to run tests.
 
-3. [Configure Jest’s test environment for testing node or browser code](./03-configure-jest-test-environment-for-node-or-browser.test.js)
+3. [Configure Jest’s test environment for testing node or browser code](./03.test.js)
 
    ```bash
    $ npx jest 03
@@ -48,7 +48,7 @@
    $ npm t -- --env=node
    ```
 
-4. [Support importing CSS files with Jest’s moduleNameMapper](./04-support-importing-css-files-with-module-name-mapper.test.js)
+4. [Support importing CSS files with Jest’s moduleNameMapper](./04.test.js)
 
    ```bash
    $ npx jest 04
@@ -66,7 +66,7 @@
 
    This can be usef for svg, graphql, or any other non-node module imports.
 
-5. [Support using webpack CSS modules with Jest](./05-support-using-webpack-css-modules-with-jest.test.js)
+5. [Support using webpack CSS modules with Jest](./05.test.js)
 
    ```bash
    $ npx jest 05
@@ -85,7 +85,7 @@
    outputting a more meaningful class on our component which we can then test
    for.
 
-6. [Generate a Serializable Value with Jest Snapshots](./06-generate-serialisable-values-with-snapshots.test.js)
+6. [Generate a Serializable Value with Jest Snapshots](./06.test.js)
 
    ```bash
    $ npx jest 06
@@ -97,3 +97,9 @@
    `react-testing-library`'s `container` property on the return value of
    `render` always wraps components in a div. If you want to evaluate your
    component exclusively, you should use `container.firstChild`
+
+7. [Test an Emotion Styled UI with Custom Jest Snapshot Serializers](./07.test.js)
+
+   ```bash
+   $ npx jest 07
+   ```
