@@ -116,3 +116,17 @@
    Other snapshot serializers, such as `jest-serializer-path`, can be used to
    modify snapshots. `jest-serializer-path` normalises absolute paths to project
    root to prevent conflicts between different devs' systems.
+
+8. [Handle Dynamic Imports using Babel with Jest](./08.test.js)
+
+   ```bash
+   $ npx jest 08
+   ```
+
+   Dynamic imports are made possible in JS through webpack, but they are not a
+   feature of Node. Because Node doesn't support dynamic imports, our tests are
+   going to fail as soon as they come across any of them.
+
+   To resolve this we need to configure `babel` to transform them. We only want
+   this done when tests are run, as Webpack should be left responsible handling
+   dynamic imports for dev and production.
