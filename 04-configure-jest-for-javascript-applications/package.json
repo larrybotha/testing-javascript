@@ -17,6 +17,7 @@
     "babel-plugin-emotion": "9.2.11",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
+    "jest-emotion": "9.2.11",
     "react-testing-library": "5.2.3"
   },
   "dependencies": {
