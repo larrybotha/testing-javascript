@@ -103,3 +103,16 @@
    ```bash
    $ npx jest 07
    ```
+
+   The snapshot generated in the previous exercise is not too useful, as we're
+   getting a generated classname from `emotion`. When the CSS changes, we get a
+   new classname, but we have no idea what that actually means.
+
+   Jest serialisers allow one to modify how different tests are serialized. In
+   the case of `emotion` we can use `jest-emotion`'s serializer to output the
+   actual CSS in our snapshot, revealing the implication of the updated
+   snapshot.
+
+   Other snapshot serializers, such as `jest-serializer-path`, can be used to
+   modify snapshots. `jest-serializer-path` normalises absolute paths to prevent
+   conflicts between different devs' systems.
