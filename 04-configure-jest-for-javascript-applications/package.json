@@ -4,7 +4,8 @@
   "description": "1. [Install and run Jest](./01-install-and-run-jest.test.js)",
   "main": "01-transpile-modules-with-babel-in-jest-tests.test.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:debug": "node --inspect $(npm bin)/jest --runInBand"
   },
   "author": "",
   "license": "ISC",

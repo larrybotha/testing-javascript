@@ -180,3 +180,64 @@
 
     We can use `react-testing-library`s `debug` method that `render` returns to
     evaluate the `container` that render also returns.
+
+11. [Support a test utilities file with Jest moduleDirectories](./11.test.js)
+
+    ```bash
+    $ npx jest 11
+    ```
+
+    For components that are wrapped in Consumers to get data we need to wrap
+    them in Providers in our tests.
+
+    We can abstract the repetitive wrapping to its own function, and to its own
+    file that can be imported into the relevant tests.
+
+    Furthermore, we can make the test utility file accessible by adding the path
+    containing the utility to Jest's `moduleDirectories`, making it easier to
+    access the utility.
+
+    On top of that, we can export all of `react-testing-library` from that file,
+    mititigating the need to import both the utility and `react-testing-library`
+    into our test, and can override `react-testing-library`s `render` function
+    so that our tests look the same, while benefitting from being wrapped in
+    Providers automatically.
+
+    ***
+
+    Using Jest's `moduleDirectories` will result in eslint not being able to
+    lint files, and catch errors like typos in imports.
+
+    To fix this we can add a resolver for eslint:
+
+    ```bash
+    $ npm i -D eslint-import-resolver-jest
+    ```
+
+    In our eslint config we can now add an override to allow eslint to properly
+    evaluate imports using our Jest config:
+
+    ```javascript
+    // eslintrc.js
+    ...
+      overrides: [
+        {
+          files: ['**/*.test.js'],
+          settings: {
+            'import/resolver': {
+              jest: {
+                jestConfigFile: path.join(__dirname, './jest.config.js'),
+              },
+            },
+          },
+        },
+      ],
+    ...
+    ```
+
+    eslint then uses Jest's `moduleDirectories` to resolve modules
+
+12. Step through Code in Jest using the Node.js Debugger and Chrome DevTools
+
+    Jest runs tests in parallel by default. We can instruct Jest to in a single
+    thread using the `--runInBand` flag to speed up debugging.
