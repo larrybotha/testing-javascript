@@ -130,3 +130,24 @@
    To resolve this we need to configure `babel` to transform them. We only want
    this done when tests are run, as Webpack should be left responsible handling
    dynamic imports for dev and production.
+
+9. [Setup an afterEach Test Hook for all tests with Jest setupTestFrameworkScriptFile](./09.test.js)
+
+   ```bash
+   $ npx jest 09
+   ```
+
+   We have a lot of repetition in our tests, where we have the cleanup imported
+   in each file, and we'd likely want to use the `emotion` serialiser in other
+   components, too.
+
+   We can abstract the common code to a single file, and then import that into
+   each file, but Jest has a more effective way to run code for all tests.
+
+   There are 2 ways to configure Jest to automatically import code into tests:
+
+   1. `setupFiles` - this is an array of files that are run _before Jest is
+      loaded_. This is useful for anything that doesn't need Jest to be loaded.
+   2. `setupTestFrameworkScriptFile` - a path to a file that we want run once
+      Jest has loaded. This file is needed if we are going to do things like add
+      snapshot serialisers, mocks, etc.
