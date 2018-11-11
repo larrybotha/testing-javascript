@@ -16,6 +16,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-plugin-dynamic-import-node": "2.2.0",
     "babel-plugin-emotion": "9.2.11",
+    "emotion-theming": "9.2.9",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
     "jest-emotion": "9.2.11",
