@@ -151,3 +151,32 @@
    2. `setupTestFrameworkScriptFile` - a path to a file that we want run once
       Jest has loaded. This file is needed if we are going to do things like add
       snapshot serialisers, mocks, etc.
+
+10. [Support custom module resolution with Jest moduleDirectories](./10.test.js)
+
+    ```bash
+    $ npx jest 10
+    ```
+
+    In Webpack one can use the `resolve.modules` property to configure Webpack
+    to evaluate paths in addition to `node_modules` to import modules. This is
+    useful on large projects, and allows one to specify imports without
+    incredibly long or tedious local import paths.
+
+    This, however, will not work in Jest by default, because a module import
+    will fail if the file is actually found locally. An example of this is in
+    [`calculator.js`](./src/calculator.js) where `loadable` is being used to
+    import `calculator-display` dynamically, but as if it were a module.
+
+    To address this, one can use `moduleDirectories` in the Jest config.
+    `moduleDirectories` is isomorphic to Webpack's `resolve.modules`, allowing
+    module imports to resolve for local files.
+
+    ***
+
+    `loadable` has a `preloadAll` method which can be used in async tests to
+    load all dynamic modules. Without preloading the dynamic imports our
+    components with dynamic imports will output the loading content.
+
+    We can use `react-testing-library`s `debug` method that `render` returns to
+    evaluate the `container` that render also returns.
