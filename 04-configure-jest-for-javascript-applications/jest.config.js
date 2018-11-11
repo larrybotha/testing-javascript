@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
 
@@ -26,4 +28,8 @@ module.exports = {
   // preparation that requires Jest, such as adding snapshot serialisers to all
   // tests
   setupTestFrameworkScriptFile: require.resolve('./test/setup-tests.js'),
+
+  // this is isomorphic to webpack's resolve.modules property, allowing Jest to
+  // resolve module imports that are outside of the node_modules directory
+  moduleDirectories: ['node_modules', path.join(__dirname, 'src'), 'shared'],
 };
