@@ -17,4 +17,13 @@ module.exports = {
     // systems, and you need to resolve differences in all the snapshots.
     // 'jest-serializer-path',
   ],
+
+  // an array of files that will be run before Jest initialises, and that don't
+  // need Jest in order to function
+  setupFiles: [],
+
+  // a test setup file that is run once Jest is loaded. Required if we need test
+  // preparation that requires Jest, such as adding snapshot serialisers to all
+  // tests
+  setupTestFrameworkScriptFile: require.resolve('./test/setup-tests.js'),
 };
