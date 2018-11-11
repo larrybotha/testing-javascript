@@ -31,5 +31,12 @@ module.exports = {
 
   // this is isomorphic to webpack's resolve.modules property, allowing Jest to
   // resolve module imports that are outside of the node_modules directory
-  moduleDirectories: ['node_modules', path.join(__dirname, 'src'), 'shared'],
+  moduleDirectories: [
+    'node_modules',
+    path.join(__dirname, 'src'),
+    'shared',
+    // let's make everything in our 'test' directory available inside our tests
+    // so that we don't have to deal with long and tedious paths
+    path.join(__dirname, 'test'),
+  ],
 };
