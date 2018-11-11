@@ -1,8 +1,7 @@
 import React from 'react';
 import {render} from 'react-testing-library';
-
-import AutoScalingText from './src/auto-scaling-text';
+import Calculator from './src/calculator';
 
 test('renders', () => {
-  render(<AutoScalingText />);
+  render(<Calculator />);
 });

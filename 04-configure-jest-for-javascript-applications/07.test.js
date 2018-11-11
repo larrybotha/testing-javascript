@@ -1,16 +1,7 @@
-import 'react-testing-library/cleanup-after-each';
 import React from 'react';
 import {render} from 'react-testing-library';
 
-// to improve output of emotion classes, we need a serialiser
-import {createSerializer} from 'jest-emotion';
-import * as emotion from 'emotion';
-
 import CalculatorDisplay from './src/calculator-display';
-
-// we extend expect's snapshot serialisers for only this file with an emotion
-// serialiser
-expect.addSnapshotSerializer(createSerializer(emotion));
 
 describe('CalculatorDisplay', () => {
   test('mounts', () => {
@@ -31,16 +22,16 @@ describe('CalculatorDisplay', () => {
     // snapshot
     /*
       .emotion-0 {
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        font-size: 6em;
-        line-height: 130px;
-        position: relative;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	font-size: 6em;
+	line-height: 130px;
+	position: relative;
       }
 
       <div
-        class="emotion-0 emotion-1"
+	class="emotion-0 emotion-1"
       >
     */
   });
