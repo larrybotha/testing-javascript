@@ -277,3 +277,21 @@
 14. Analyze Jest Code Coverage Reports
 
     Jest uses Istanbul for generating coverage.
+
+15. Set a code coverage threshold in Jest to maintain code coverage levels
+
+    ```bash
+    $ npx jest --coverage
+    ```
+
+    We can ocnfigure Jest to enforce code coverage levels. This is useful in CI
+    to prevent builds / deployments if code coverage begins to suffer.
+
+    In Jest's config we use the `coverageThreshold` property to configure our
+    thresholds.
+
+    ***
+
+    Not all lines are as valuable to have coverage for as others. To address
+    this we can add globs as properties to the `coverageThreshold` property with
+    fine-grained thresholds.
