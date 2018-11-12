@@ -273,3 +273,7 @@
 
     `collectCoverageFrom` also indicates to Jest to include everything that may
     not even have a test file.
+
+14. Analyze Jest Code Coverage Reports
+
+    Jest uses Istanbul for generating coverage.
