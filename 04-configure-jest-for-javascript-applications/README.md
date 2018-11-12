@@ -241,3 +241,35 @@
 
     Jest runs tests in parallel by default. We can instruct Jest to in a single
     thread using the `--runInBand` flag to speed up debugging.
+
+13. Configure Jest to report code coverage on project files
+
+    ```bash
+    $ npx jest --coverage
+    ```
+
+    Running coverage indicates how much of your codebase has had tests written
+    for it.
+
+    Jest generates coverage files in a `coverage` folder, which should not be
+    committed to the project.
+
+    Running the generated files with a server will allow one to inspect exactly
+    where coverage is required:
+
+    ```bash
+    $ npx jest --coverage && cd coverage/lcov-report && npx serve
+    ```
+
+    ***
+
+    Be default Jest will run coverage only for files included in our tests, and
+    including tests.
+
+    We don't want to know coverage for our tests, so we can configure Jest to
+    collect coverage only from specific files, using `collectCoverageFrom` in
+    `jest.config.js`, passing an array of paths that should be evaluated for
+    coverage.
+
+    `collectCoverageFrom` also indicates to Jest to include everything that may
+    not even have a test file.
