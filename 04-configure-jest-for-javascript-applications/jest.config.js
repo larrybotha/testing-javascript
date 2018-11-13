@@ -38,6 +38,8 @@ module.exports = {
   // Jest creates coverage only for files that have tests.
   collectCoverageFrom: ['src/**/*.js'],
 
+  coverageDirectory: '../coverage',
+
   coverageThreshold: {
     global: {
       // expect 100% coverage everywhere
