@@ -8,4 +8,4 @@ test('formats the value', () => {
 // makes use of jsdom by default for us
 // We can configure Jest to run exclusively for the browser, or node, via
 // jest.config.js
-console.log(window);
+// console.log(window);
