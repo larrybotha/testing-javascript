@@ -23,6 +23,7 @@
     "is-ci-cli": "1.1.1",
     "jest": "23.6.0",
     "jest-emotion": "9.2.11",
+    "jest-watch-typeahead": "0.2.0",
     "react-testing-library": "5.2.3"
   },
   "dependencies": {

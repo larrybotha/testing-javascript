@@ -61,4 +61,10 @@ module.exports = {
       functions: 100,
     },
   },
+
+  // add a list of plugins to extend watch, which is plugable
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
 };

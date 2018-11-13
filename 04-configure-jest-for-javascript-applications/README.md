@@ -344,3 +344,11 @@
     },
     ...
     ```
+
+19. Filter which Tests are Run with Typeahead Support in Jest Watch Mode
+
+    Being able to use `p` and `t` in Jest's `watch` mode is useful, but we can
+    get even better feedback using `jest-watch-typeahead`.
+
+    `jest-watch-typeahead` is a plugin for `watch` which can be installed and
+    then configured under the `watchPlugins` entry in `jest.config.js`
