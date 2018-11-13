@@ -328,3 +328,19 @@
     - `t` filter by test name regex pattern. This behaves in a similar way to
       using `test.only` to run only specified tests
     - `Enter` rerun the current tests
+
+18. Run Jest Watch Mode by default locally with is-ci-cli
+
+    Instead of running `nom run test:watch` locally and `npm test` on CI, we can
+    use `is-ci-cli` to run one script or another, based on whether we are in a
+    CI environment or not:
+
+    ```json
+    ...
+    "scripts": {
+      "my-script": "is-ci 'my-ci-script' 'my-local-script'",
+      "my-local-script": ...,
+      "my-ci-script": ...
+    },
+    ...
+    ```
