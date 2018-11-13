@@ -4,7 +4,8 @@
   "description": "1. [Install and run Jest](./01-install-and-run-jest.test.js)",
   "main": "01-transpile-modules-with-babel-in-jest-tests.test.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "is-ci 'test:covereage' 'test:watch'",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:debug": "node --inspect $(npm bin)/jest --runInBand"
   },
@@ -19,6 +20,7 @@
     "babel-plugin-dynamic-import-node": "2.2.0",
     "babel-plugin-emotion": "9.2.11",
     "identity-obj-proxy": "3.0.0",
+    "is-ci-cli": "1.1.1",
     "jest": "23.6.0",
     "jest-emotion": "9.2.11",
     "react-testing-library": "5.2.3"
