@@ -3,8 +3,10 @@ language: node_js
 node_js:
   - 'node'
   - '9'
-install: cd 04-configure-jest-for-javascript-applications && npm install
-script: cd 04-configure-jest-for-javascript-applications && npm test
-after_script: npx codecov03
+before_install:
+  - cd 04-configure-jest-for-javascript-applications/
+install: npm install
+script: npm test
+after_script: npx codecov@3
 branches:
   only: master

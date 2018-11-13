@@ -19,7 +19,7 @@ describe('CalculatorDisplay', () => {
     // wrapping your component in a div
     // Your component can be obtained at container.firstChild
     console.log(container.innerHTML);
-    console.log(container.firstChild);
+    // console.log(container.firstChild);
 
     expect(container.firstChild).toMatchSnapshot();
   });
