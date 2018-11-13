@@ -304,3 +304,27 @@
     In `.travis.yml` we can use the `after_script` property to instruct Travis
     what to do once tests pass. This is when we'd want to run the `codecov`
     binary.
+
+17. Use Jest Watch Mode to speed up development
+
+    Jest's `--watch` mode watches files for changes, and puts tests into
+    interactive mode.
+
+    Jest watches for files that have been modified in Git, and runs tests
+    against changed files.
+
+    Interactive mode commands:
+
+    - `u` update all failed snapshots
+    - `i` interactively update failed snapshots
+      - `u` update the current snapshot
+      - `s` skip the current snapshot
+      - `q` quit interactive snapshot updating
+    - `f` run only failing tests
+    - `a` run all tests
+    - `o` run tests only for files that are modified
+    - `p` filter by filename regex pattern
+      - `c` clear filters
+    - `t` filter by test name regex pattern. This behaves in a similar way to
+      using `test.only` to run only specified tests
+    - `Enter` rerun the current tests
