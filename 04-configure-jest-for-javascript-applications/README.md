@@ -295,3 +295,12 @@
     Not all lines are as valuable to have coverage for as others. To address
     this we can add globs as properties to the `coverageThreshold` property with
     fine-grained thresholds.
+
+16. Report Jest Test Coverage to Codecov through TavisCI
+
+    Using `npx` we can run the `codecov` binary to send code coverage reports to
+    codecov.io
+
+    In `.travis.yml` we can use the `after_script` property to instruct Travis
+    what to do once tests pass. This is when we'd want to run the `codecov`
+    binary.
