@@ -4,10 +4,14 @@
   "description": "1. [Install and run Jest](./01-install-and-run-jest.test.js)",
   "main": "01-transpile-modules-with-babel-in-jest-tests.test.js",
   "scripts": {
-    "test": "is-ci 'test:covereage' 'test:watch'",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
-    "test:debug": "node --inspect $(npm bin)/jest --runInBand"
+    "test": "is-ci 'test:coverage' 'test:watch:client'",
+    "test:coverage": "npm run test:coverage:client && npm run test:coverage:server",
+    "test:coverage:client": "jest --coverage --config test/jest.client.js",
+    "test:coverage:server": "jest --coverage --config test/jest.server.js",
+    "test:watch:server": "jest --watch --config test/jest.server.js",
+    "test:watch:client": "jest --watch --config test/jest.client.js",
+    "test:debug:client": "node --inspect $(npm bin)/jest --runInBand --config test/jest.client.js",
+    "test:debug:server": "node --inspect $(npm bin)/jest --runInBand --config test/jest.server.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +23,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-plugin-dynamic-import-node": "2.2.0",
     "babel-plugin-emotion": "9.2.11",
+    "emotion-theming": "9.2.9",
     "identity-obj-proxy": "3.0.0",
     "is-ci-cli": "1.1.1",
     "jest": "23.6.0",
