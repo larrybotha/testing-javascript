@@ -352,3 +352,16 @@
 
     `jest-watch-typeahead` is a plugin for `watch` which can be installed and
     then configured under the `watchPlugins` entry in `jest.config.js`
+
+20. Run tests with a different configuration using Jest’s `--config` flag and testMatch option
+
+    Jest allows one to run specific configs using its `--config` flag. This
+    allows us to easily run separate configs for client-side and server-side
+    code.
+
+    By default Jest uses the config directory as the root directory to find
+    tests to run.
+
+    Because we've now moved our configs to a subfolder Jest will no longer be
+    able to find test files. To address this Jest allows for a `rootDir` prop to
+    be set in configs, which it will use as the root.
