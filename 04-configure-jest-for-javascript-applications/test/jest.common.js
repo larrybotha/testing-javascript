@@ -1,6 +1,11 @@
 const path = require('path');
 
 module.exports = {
+  // Jest will use the config's location as the root directory to find files to
+  // run tests against. Because we're now in ./test it won't find any files.
+  // We need to configure Jest's rootDir to look from one directory up
+  rootDir: path.join(__dirname, '..'),
+
   testEnvironment: 'jest-environment-jsdom',
 
   moduleNameMapper: {
@@ -8,7 +13,7 @@ module.exports = {
     // Based on the import, it'll output something more valuable than a simple
     // module.exports = {}
     '\\.module\\.css': 'identity-obj-proxy',
-    '\\.css$': require.resolve('./test/style-mock.js'),
+    '\\.css$': require.resolve('./style-mock.js'),
   },
 
   // for snapshot serialisers that initialise themselves, we can add them to our
@@ -24,43 +29,14 @@ module.exports = {
   // need Jest in order to function
   setupFiles: [],
 
-  // a test setup file that is run once Jest is loaded. Required if we need test
-  // preparation that requires Jest, such as adding snapshot serialisers to all
-  // tests
-  setupTestFrameworkScriptFile: require.resolve('./test/setup-tests.js'),
-
   // this is isomorphic to webpack's resolve.modules property, allowing Jest to
   // resolve module imports that are outside of the node_modules directory
-  moduleDirectories: ['node_modules', path.join(__dirname, 'src'), 'shared'],
+  moduleDirectories: ['node_modules', path.join(__dirname, '../src'), 'shared'],
 
   // only collect coverage for files found in the src folder
   // Include all files in coverage that may not have any tests, as by default
   // Jest creates coverage only for files that have tests.
-  collectCoverageFrom: ['src/**/*.js'],
-
-  coverageDirectory: '../coverage',
-
-  coverageThreshold: {
-    global: {
-      // expect 100% coverage everywhere
-      // statements: 100,
-      // branches: 100,
-      // lines: 100,
-      // functions: 100,
-
-      statements: 17,
-      branches: 4,
-      lines: 17,
-      functions: 20,
-    },
-    // set thresholds specifically for utils.js
-    './src/utils.js': {
-      statements: 100,
-      branches: 80,
-      lines: 100,
-      functions: 100,
-    },
-  },
+  collectCoverageFrom: ['<rootDir>/src/**/*.js'],
 
   // add a list of plugins to extend watch, which is plugable
   watchPlugins: [
