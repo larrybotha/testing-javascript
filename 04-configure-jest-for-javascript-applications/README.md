@@ -365,3 +365,41 @@
     Because we've now moved our configs to a subfolder Jest will no longer be
     able to find test files. To address this Jest allows for a `rootDir` prop to
     be set in configs, which it will use as the root.
+
+21. Support Running Multiple Configurations with Jest’s Projects Feature
+
+    Jest allows multiple configurations to be run at the same time:
+
+    ```bash
+    $ npx jest --projects test/jest.client.js test/jest.server.js
+
+    # or
+    $ npx jest --projects test/jest.client.js test/jest.server.js --watch
+
+    # or
+    $ npx jest --projects test/jest.client.js test/jest.server.js --coverage
+    ```
+
+    This allows one to eliminate the large number of test scripts building up in
+    `package.json`.
+
+    Jest's `projects` property in the config accepts an array of configs to run
+    at the same time.
+
+    To view a specific config in its entirety, one can run Jest with the
+    `--showConfig` flag:
+
+    ```bash
+    $ npx jest  --config test/jest.client.js --showConfig
+    ```
+
+    Outputting this we can see a `project` configuration property, which will be
+    applied specifically to that config, and a `global` property, which will be
+    applied to all configs.
+
+    To make it more clear which config is running which tests, we can add a
+    `displayName` property to each project config. When tests are run, they are
+    output with their `displayName`s prepended.
+
+    In `package.json` we no longer need to run separate scripts for our tests
+    because Jest will be running multiple projects.
