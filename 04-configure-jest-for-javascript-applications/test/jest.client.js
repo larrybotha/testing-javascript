@@ -2,6 +2,10 @@ module.exports = {
   // spread common configs
   ...require('./jest.common'),
 
+  // add a displayName so we can easily differentiate these tests from other
+  // tests when Jest is running multiple projects
+  displayName: 'dom',
+
   testEnvironment: 'jest-environment-jsdom',
   coverageDirectory: '../../coverage',
 
@@ -9,26 +13,4 @@ module.exports = {
   // preparation that requires Jest, such as adding snapshot serialisers to all
   // tests
   setupTestFrameworkScriptFile: require.resolve('./setup-tests.js'),
-
-  coverageThreshold: {
-    global: {
-      // expect 100% coverage everywhere
-      // statements: 100,
-      // branches: 100,
-      // lines: 100,
-      // functions: 100,
-
-      statements: 17,
-      branches: 4,
-      lines: 17,
-      functions: 20,
-    },
-    // set thresholds specifically for utils.js
-    'src/utils.js': {
-      statements: 100,
-      branches: 80,
-      lines: 100,
-      functions: 100,
-    },
-  },
 };

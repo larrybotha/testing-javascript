@@ -4,14 +4,10 @@
   "description": "1. [Install and run Jest](./01-install-and-run-jest.test.js)",
   "main": "01-transpile-modules-with-babel-in-jest-tests.test.js",
   "scripts": {
-    "test": "is-ci 'test:coverage' 'test:watch:client'",
-    "test:coverage": "npm run test:coverage:client && npm run test:coverage:server",
-    "test:coverage:client": "jest --coverage --config test/jest.client.js",
-    "test:coverage:server": "jest --coverage --config test/jest.server.js",
-    "test:watch:server": "jest --watch --config test/jest.server.js",
-    "test:watch:client": "jest --watch --config test/jest.client.js",
-    "test:debug:client": "node --inspect $(npm bin)/jest --runInBand --config test/jest.client.js",
-    "test:debug:server": "node --inspect $(npm bin)/jest --runInBand --config test/jest.server.js"
+    "test": "is-ci 'test:coverage' 'test:watch'",
+    "test:coverage": "jest --coverage",
+    "test:debug": "node --inspect $(npm bin)/jest --runInBand",
+    "test:watch": "jest --watch"
   },
   "author": "",
   "license": "ISC",

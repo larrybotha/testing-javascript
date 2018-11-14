@@ -33,11 +33,6 @@ module.exports = {
   // resolve module imports that are outside of the node_modules directory
   moduleDirectories: ['node_modules', path.join(__dirname, '../src'), 'shared'],
 
-  // only collect coverage for files found in the src folder
-  // Include all files in coverage that may not have any tests, as by default
-  // Jest creates coverage only for files that have tests.
-  collectCoverageFrom: ['<rootDir>/src/**/*.js'],
-
   // add a list of plugins to extend watch, which is plugable
   watchPlugins: [
     'jest-watch-typeahead/filename',
