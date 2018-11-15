@@ -413,3 +413,15 @@
     Using the `jest-watch-select-projects` plugin we get a new `P` command in
     `--watch` mode that allows us to toggle projects, allowing us to run only
     the projects we're interested in.
+
+23. Run ESLint with Jest using jest-runner-eslint
+
+    Jest is not just a test runner, but a task running platform. It can be used
+    to run linting on files, and even run tests on files of other languages. At
+    the time of writing this there are test runners for both Go and Python.
+
+    To run tasks other than testing, we can create a new config which we add to
+    the `projects` property in our Jest config.
+
+    In this config we specify a new runner, specifically `jest-runner-eslint`,
+    to lint our files.
