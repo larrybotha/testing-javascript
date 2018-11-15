@@ -2,7 +2,11 @@ module.exports = {
   ...require('./test/jest.common'),
 
   // specify the configs to run at the same time
-  projects: ['./test/jest.client.js', './test/jest.server.js'],
+  projects: [
+    './test/jest.client.js',
+    './test/jest.server.js',
+    './test/jest.lint.js',
+  ],
 
   // only collect coverage for files found in the src folder
   // Include all files in coverage that may not have any tests, as by default
