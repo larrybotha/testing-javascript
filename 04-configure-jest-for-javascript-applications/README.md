@@ -403,3 +403,13 @@
 
     In `package.json` we no longer need to run separate scripts for our tests
     because Jest will be running multiple projects.
+
+22. Test specific projects in Jest Watch Mode with jest-watch-select-projects
+
+    Jest's `projects` property allows us to run multiple configs at the same
+    time, but if we only want to run tests for a single project we have to go
+    back to the command line and run only that project.
+
+    Using the `jest-watch-select-projects` plugin we get a new `P` command in
+    `--watch` mode that allows us to toggle projects, allowing us to run only
+    the projects we're interested in.
