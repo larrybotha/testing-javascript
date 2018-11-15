@@ -4,6 +4,7 @@
   "description": "1. [Install and run Jest](./01-install-and-run-jest.test.js)",
   "main": "01-transpile-modules-with-babel-in-jest-tests.test.js",
   "scripts": {
+    "lint": "jest --config test/jest.lint.js",
     "test": "is-ci 'test:coverage' 'test:watch'",
     "test:coverage": "jest --coverage",
     "test:debug": "node --inspect $(npm bin)/jest --runInBand",
