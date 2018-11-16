@@ -8,7 +8,8 @@
     "test": "is-ci 'test:coverage' 'test:watch'",
     "test:coverage": "jest --coverage",
     "test:debug": "node --inspect $(npm bin)/jest --runInBand",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "precommit": "lint-staged"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "eslint": "5.9.0",
     "eslint-config-kentcdodds": "^14.0.0",
     "eslint-import-resolver-jest": "^2.1.1",
+    "husky": "1.1.4",
     "identity-obj-proxy": "3.0.0",
     "is-ci-cli": "1.1.1",
     "jest": "23.6.0",
@@ -31,6 +33,7 @@
     "jest-runner-eslint": "0.7.1",
     "jest-watch-select-projects": "0.1.1",
     "jest-watch-typeahead": "0.2.0",
+    "lint-staged": "8.0.4",
     "react-testing-library": "5.2.3"
   },
   "dependencies": {
