@@ -8,7 +8,11 @@ module.exports = {
     'kentcdodds/jest',
     'kentcdodds/react',
   ],
+
+  // eslint complains about the cypress generated tests, so we can add a plugin
+  // to address that
   plugins: ['eslint-plugin-cypress'],
+  // we also make cypress' globals known to eslint
   env: {'cypress/globals': true},
   overrides: [
     {
