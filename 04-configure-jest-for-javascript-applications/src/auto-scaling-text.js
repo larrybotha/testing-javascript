@@ -17,6 +17,7 @@ class AutoScalingText extends React.Component {
   getScale() {
     const node = this.node.current;
     if (!node) {
+      // comment for commit
       return 1;
     }
     const parentNode = node.parentNode;

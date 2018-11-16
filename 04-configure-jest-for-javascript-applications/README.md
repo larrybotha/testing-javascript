@@ -425,3 +425,43 @@
 
     In this config we specify a new runner, specifically `jest-runner-eslint`,
     to lint our files.
+
+24. Run only relevant Jest tests on git commit to avoid breakages
+
+    Jest has a `--findRelatedTests` flag that will find all files related to a
+    specific test. This can be used to speed up tests if only a few files have
+    changed.
+
+    Knowing which files have changed takes time, but we can leverage `husky` and
+    `lint-staged` to evaluate tehse files dynamically.
+
+    `husky` allows us to configure git hooks, and `lint-staged` allows us to run
+    commands on staged files. If those commands pass when a commit is attempted,
+    the commit will be made, otherwise the commit will be prevented.
+
+    To configure this, we need a precommit hook. We add this as a script to
+    `package.json`:
+
+    ```json
+    ...
+    scripts: {
+      ...
+      "precommit": "lint-staged",
+      ...
+    }
+    ...
+    ```
+
+    We instruct `husky`, via our `precommit` script, to run `lint-staged`.
+
+    In a `lint-staged.config.js` we can pass a list of files directly to Jest to
+    have only those tests run before the commit is made:
+
+    ```javascript
+    ...
+      '**/*.js': 'jest --findRelatedTests',
+    ...
+    ```
+
+    Jest will run tests on only the staged js files, as passed to it by
+    `lint-staged`, triggered by our `precommit` hook that is run by `husky`.
