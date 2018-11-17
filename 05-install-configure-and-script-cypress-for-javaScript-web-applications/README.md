@@ -37,3 +37,26 @@
    To get an element, we use `.get('.my-selector')`. We can trigger a click on
    it with `.click()`. We can run assertions on elements using
    `.should('[assertion.command]', 'value-to-compare')`.
+
+3. Configure Cypress in cypress.json
+
+   Cypress can be configured via `cypress.json`.
+
+   Instead of passing `http://localhost:8080` to all of our tests in
+   `cy.visit()`, we can configure a `baseUrl` property that will be used in our
+   tests, for which we can provide only paths.
+
+   This solves another problem - by specifying a full URL, Cypress will reload
+   the app every time the test is rerun. Using `baseUrl` overcomes this.
+
+   We can move our `calculator.js` test in `cypress/integration` into
+   `cypress/e2e` to better describe the intent of our tests.
+
+   Cypress runs integration tests by default from `cypress/integration`, so
+   we'll need to configure the `integrationFolder`
+
+   By default Cypress runs apps at 1000x660. We can use the `viewportWidth` and
+   `viewportHeight` properties in the config to specify our own dimensions.
+
+   In Cypress' UI we can view the entire config for the project, including
+   environment variables, plugin overrides, and CLI flags.
