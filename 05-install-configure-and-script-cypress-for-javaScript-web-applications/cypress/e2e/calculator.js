@@ -1,16 +1,17 @@
 describe('anonymous calculator', () => {
   it('adds numbers', () => {
-    // use / relative to baseUrl
     cy.visit('/')
-      .get('._2S_Gj6clvtEi-dZqCLelKb > :nth-child(3)')
+      // use the commands that cypress-testing-library has provided us with to
+      // make getting elements more convenient and easier to read
+      .getByText(/^1$/)
       .click()
-      .get('._1yUJ9HTWYf2v-MMhAEVCAn > :nth-child(4)')
+      .getByText(/^\+$/)
       .click()
-      .get('._2S_Gj6clvtEi-dZqCLelKb > :nth-child(5)')
+      .getByText(/^2$/)
       .click()
-      .get('._1yUJ9HTWYf2v-MMhAEVCAn > :nth-child(5)')
+      .getByText(/^=$/)
       .click()
-      .get('[data-testid=total]')
-      .should('have.text', '4')
+      .getByTestId('total')
+      .should('have.text', '3')
   })
 })
