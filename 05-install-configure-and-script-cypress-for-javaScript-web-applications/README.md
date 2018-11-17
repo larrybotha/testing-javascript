@@ -60,3 +60,15 @@
 
    In Cypress' UI we can view the entire config for the project, including
    environment variables, plugin overrides, and CLI flags.
+
+4. Installing cypress-testing-library
+
+   Currently the `.get()` commands in our calculator test are pretty nasty. We
+   can leverage `cypress-testing-library` to benefit from commands similar to
+   those in `react-testing-library`.
+
+   Once `cypress-testing-library` is installed, we need to extend `cy`'s
+   commands. This is done by importing commands into
+   `cypress/support/index.js`. We import `cypress-testing-library/add-commands` here.
+
+   Now we can change `.get()` to `.getByText`, `.getByTestId` etc.
