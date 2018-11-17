@@ -55,5 +55,8 @@
    Cypress runs integration tests by default from `cypress/integration`, so
    we'll need to configure the `integrationFolder`
 
-   By default Cypress runs apps at 1000x600. We can use the `viewportWidth` and
+   By default Cypress runs apps at 1000x660. We can use the `viewportWidth` and
    `viewportHeight` properties in the config to specify our own dimensions.
+
+   In Cypress' UI we can view the entire config for the project, including
+   environment variables, plugin overrides, and CLI flags.
