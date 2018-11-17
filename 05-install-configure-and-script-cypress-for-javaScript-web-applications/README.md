@@ -9,4 +9,10 @@
    ```
 
    This generates a number of tests and files in `./cypress` folder, including
-   a folder for end-to-end tests, fixtures, plugins, and support.
+   a folder for integration tests, fixtures, plugins, and support.
+
+2. Write the first Cypress Test
+
+   ```bash
+   $ npm run dev & npx cypress open
+   ```
