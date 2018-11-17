@@ -46,6 +46,9 @@
    `cy.visit()`, we can configure a `baseUrl` property that will be used in our
    tests, for which we can provide only paths.
 
+   This solves another problem - by specifying a full URL, Cypress will reload
+   the app every time the test is rerun. Using `baseUrl` overcomes this.
+
    We can move our `calculator.js` test in `cypress/integration` into
    `cypress/e2e` to better describe the intent of our tests.
 
