@@ -72,3 +72,21 @@
    `cypress/support/index.js`. We import `cypress-testing-library/add-commands` here.
 
    Now we can change `.get()` to `.getByText`, `.getByTestId` etc.
+
+5. Scripting Cypress for local development and Continuous Integration
+
+   In order to run Cypress we need to first run our server, and then start
+   Cypress once that's running. It'd be convenient to be able to have the
+   server start and Cypress then run once the server is receiving responses.
+
+   This is also required for CI, because we need some way to start the server,
+   run Cypress, and then kill the server once Cypress is done.
+
+   We can use `start-server-and-test` to start our server, wait for the app to
+   be accepting requests, run Cypress, and then kill our server.
+
+   When we run Cypress on CI we don't want/need the UI. `cypress run` runs tests
+   on Cypress without the UI.
+
+   Using `is-ci`, `start-server-and-run`, `npm-run-all`, and separating our
+   scripts we can simplify running our application and tests at the same time.
