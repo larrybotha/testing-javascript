@@ -136,3 +136,21 @@
    ```
 
    Type assertions can be done using `.should('be.a', expectedType)`
+
+8. Cypress Driven Development
+
+   Because Cypress can automate repetitive work, one can use it in a similar
+   manner to test-driven-development. We can automate away repetitive work
+   through Cypress, while having the tests validate that we're on the right
+   path.
+
+   Because Cypress is running an instance of Chrome, we can do our development
+   inside Cypress with little need for running our apps in regular browsers.
+
+   Cypress allows one to override the default timeout when resolving subjects:
+
+   ```javascript
+   ...
+    .get(someSubject, {timeout: 500})
+   ...
+   ```
