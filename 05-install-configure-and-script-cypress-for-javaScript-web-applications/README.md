@@ -17,6 +17,8 @@
    $ npm run dev & npx cypress open
    ```
 
+   [`calculator.js`](./cypress/e2e/calculator.js)
+
    Tests in Cypress need to start with `cy.visit()` in order for Cypress to know
    what to render for integration tests to be written.
 
@@ -101,3 +103,36 @@
    Cypress adds a `Cypress` object to the global object which can be used in
    tests to determine whether a file is being executed in the context of
    Cypress or not.
+
+7. Use Cypress to test user registration
+
+   [`register.js`](./cypress/e2e/register.js)
+
+   We can automate registration by navigating to the sign up page, entering in
+   details, and submitting the form.
+
+   Using `test-data-bot` we can generate credentials for users using `faker`s
+   API.
+
+   To have Cypress simulate a user typing out text, we use the `.type('text to type')`
+   command once we have a subject (an element).
+
+   We can evaluate the current URL using `.url().should('eq', myUrl)`
+
+   Cypress provides access to config values inside tests via `Cypress.config()`
+
+   We can evaluate the `window` object using `.window()` to make it the
+   subject.
+
+   To evaluate properties on a subject, we use the `.its('property[name]')`
+   command:
+
+   ```javascript
+   ...
+     .window()
+     .its('document.body')
+     .should('have.class', 'my-class')
+   ...
+   ```
+
+   Type assertions can be done using `.should('be.a', expectedType)`
