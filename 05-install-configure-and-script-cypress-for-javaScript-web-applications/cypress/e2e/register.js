@@ -29,5 +29,10 @@ describe('user registration', () => {
       .its('localStorage.token')
       // using the be.a assertsion which appears to evaluate types
       .should('be.a', 'string')
+      // get the element with testid of username-display, and set the timeout to
+      // less than the default 4000ms that Cypress uses, because if don't have it
+      // by now, we're probabliy not going to get it at all
+      .getByTestId('username-display', {timeout: 500})
+      .should('have.text', user.username)
   })
 })
