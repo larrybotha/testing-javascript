@@ -90,3 +90,14 @@
 
    Using `is-ci`, `start-server-and-run`, `npm-run-all`, and separating our
    scripts we can simplify running our application and tests at the same time.
+
+6. Debug a test with Cypress
+
+   Because Cypress uses Chrome you can use dev tools to debug your tests.
+
+   To debug tests in Cypress, chain a `.then` that accepts a subject and
+   returns it. Inside this statement you can place a `debugger` statement.
+
+   Cypress adds a `Cypress` object to the global object which can be used in
+   tests to determine whether a file is being executed in the context of
+   Cypress or not.
