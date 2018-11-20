@@ -183,3 +183,11 @@
 
    With the mock server in place, and our path stubbed, we can evaluate how the
    UI is handling these different responses.
+
+10. Test user login with Cypress
+
+    [`login.js`](./cypress/e2e/login.js)
+
+    We can validate the log in flow using a similar approach as with
+    `register.js`. We don't yet have a user, so we need to first register the
+    user, and then go through the log in flow using the same credentials.
