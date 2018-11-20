@@ -35,4 +35,26 @@ describe('user registration', () => {
       .getByTestId('username-display', {timeout: 500})
       .should('have.text', user.username)
   })
+
+  it.only(`shows an error message if the server response is an error`, () => {
+    // indicate to Cypress that we want to setup a mock server
+    cy.server()
+
+    // Provide the stub that we want to evaluate an error for
+    // If a request is made to this path, then Cypress will intercept it, and
+    // respond with the options defined in this config.
+    cy.route({
+      url: 'http://localhost:3000/register',
+      method: 'POST',
+      status: 500,
+      response: {},
+    })
+
+    // go to the register page, click the submit button, and assert that there's
+    // error text
+    cy.visit('/register')
+      .getByText(/submit/i)
+      .click()
+      .getByText(/error.*try again/i)
+  })
 })
