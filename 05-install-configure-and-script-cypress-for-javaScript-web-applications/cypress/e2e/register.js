@@ -36,7 +36,7 @@ describe('user registration', () => {
       .should('have.text', user.username)
   })
 
-  it.only(`shows an error message if the server response is an error`, () => {
+  it(`shows an error message if the server response is an error`, () => {
     // indicate to Cypress that we want to setup a mock server
     cy.server()
 
