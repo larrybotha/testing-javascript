@@ -154,3 +154,32 @@
     .get(someSubject, {timeout: 500})
    ...
    ```
+
+9. Simulate HTTP Errors in Cypress Tests
+
+   [`register.js`](./cypress/e2e/register.js)
+
+   We can stub out requests to services in Cypress so that we can evaluate what
+   happens for different responses.
+
+   We need to do a few things in order to stub out requests:
+
+   1. indicate to Cypress that we want to use mock server:
+
+      ```javascript
+      cy.server()
+      ```
+
+   2. define which requests Cypress should stub out, and how to respond:
+
+      ```javascript
+      cy.route({
+        method: 'POST',
+        url: requestUrl,
+        status: 500,
+        response: {},
+      })
+      ```
+
+   With the mock server in place, and our path stubbed, we can evaluate how the
+   UI is handling these different responses.
