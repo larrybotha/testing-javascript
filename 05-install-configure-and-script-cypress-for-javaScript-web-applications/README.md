@@ -206,3 +206,18 @@ Checkout individual branches for changes specific to that section of the course.
     endpoint to register the user, and the test only the log in flow.
 
     This can be achieved using `cy.request(options)`.
+
+12. **Keep tests isolated and focused with custom Cypress commands**
+
+    Being able to create the new user on `login.js` is convenient, but if other
+    tests need a user to be created, it can quickly become tedious to repeat the
+    same process.
+
+    To address this, we can create a custom Cypress command in
+    `cypress/support/commands.js`:
+
+    ```javascript
+    Cypress.Command.add('myCommand', () => {
+      cy.request(options)
+    })
+    ```
