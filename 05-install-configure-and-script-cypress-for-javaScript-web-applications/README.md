@@ -2,7 +2,7 @@
 
 Checkout individual branches for changes specific to that section of the course.
 
-1. Install and run Cypress
+1. **Install and run Cypress**
 
    Once Cypress is installed in a project, we can run it with:
 
@@ -13,7 +13,7 @@ Checkout individual branches for changes specific to that section of the course.
    This generates a number of tests and files in `./cypress` folder, including
    a folder for integration tests, fixtures, plugins, and support.
 
-2. Write the first Cypress Test
+2. **Write the first Cypress Test**
 
    ```bash
    $ npm run dev & npx cypress open
@@ -42,7 +42,7 @@ Checkout individual branches for changes specific to that section of the course.
    it with `.click()`. We can run assertions on elements using
    `.should('[assertion.command]', 'value-to-compare')`.
 
-3. Configure Cypress in cypress.json
+3. **Configure Cypress in cypress.json**
 
    Cypress can be configured via `cypress.json`.
 
@@ -65,7 +65,7 @@ Checkout individual branches for changes specific to that section of the course.
    In Cypress' UI we can view the entire config for the project, including
    environment variables, plugin overrides, and CLI flags.
 
-4. Installing cypress-testing-library
+4. **Installing cypress-testing-library**
 
    Currently the `.get()` commands in our calculator test are pretty nasty. We
    can leverage `cypress-testing-library` to benefit from commands similar to
@@ -77,7 +77,7 @@ Checkout individual branches for changes specific to that section of the course.
 
    Now we can change `.get()` to `.getByText`, `.getByTestId` etc.
 
-5. Scripting Cypress for local development and Continuous Integration
+5. **Scripting Cypress for local development and Continuous Integration**
 
    In order to run Cypress we need to first run our server, and then start
    Cypress once that's running. It'd be convenient to be able to have the
@@ -95,7 +95,7 @@ Checkout individual branches for changes specific to that section of the course.
    Using `is-ci`, `start-server-and-run`, `npm-run-all`, and separating our
    scripts we can simplify running our application and tests at the same time.
 
-6. Debug a test with Cypress
+6. **Debug a test with Cypress**
 
    Because Cypress uses Chrome you can use dev tools to debug your tests.
 
@@ -106,7 +106,7 @@ Checkout individual branches for changes specific to that section of the course.
    tests to determine whether a file is being executed in the context of
    Cypress or not.
 
-7. Use Cypress to test user registration
+7. **Use Cypress to test user registration**
 
    [`register.js`](./cypress/e2e/register.js)
 
@@ -139,7 +139,7 @@ Checkout individual branches for changes specific to that section of the course.
 
    Type assertions can be done using `.should('be.a', expectedType)`
 
-8. Cypress Driven Development
+8. **Cypress Driven Development**
 
    Because Cypress can automate repetitive work, one can use it in a similar
    manner to test-driven-development. We can automate away repetitive work
@@ -157,7 +157,7 @@ Checkout individual branches for changes specific to that section of the course.
    ...
    ```
 
-9. Simulate HTTP Errors in Cypress Tests
+9. **Simulate HTTP Errors in Cypress Tests**
 
    [`register.js`](./cypress/e2e/register.js)
 
@@ -186,7 +186,7 @@ Checkout individual branches for changes specific to that section of the course.
    With the mock server in place, and our path stubbed, we can evaluate how the
    UI is handling these different responses.
 
-10. Test user login with Cypress
+10. **Test user login with Cypress**
 
     [`login.js`](./cypress/e2e/login.js)
 
@@ -194,7 +194,7 @@ Checkout individual branches for changes specific to that section of the course.
     `register.js`. We don't yet have a user, so we need to first register the
     user, and then go through the log in flow using the same credentials.
 
-11. Create a user with cy.request from Cypress
+11. **Create a user with cy.request from Cypress**
 
     [`login.js`](./cypress/e2e/login.js)
 
