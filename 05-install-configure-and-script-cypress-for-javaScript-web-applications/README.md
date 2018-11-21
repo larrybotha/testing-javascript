@@ -1,5 +1,7 @@
 # install, configure, and script Cypress for JavaScript web applications
 
+Checkout individual branches for changes specific to that section of the course.
+
 1. Install and run Cypress
 
    Once Cypress is installed in a project, we can run it with:
@@ -191,3 +193,16 @@
     We can validate the log in flow using a similar approach as with
     `register.js`. We don't yet have a user, so we need to first register the
     user, and then go through the log in flow using the same credentials.
+
+11. Create a user with cy.request from Cypress
+
+    [`login.js`](./cypress/e2e/login.js)
+
+    In `login.js` we've duplicated the registration flow. This makes maintaining
+    the tests more difficult when there are changes or errors, and we're just
+    doing the same work again.
+
+    To get around this, we can instead make the request to the registration
+    endpoint to register the user, and the test only the log in flow.
+
+    This can be achieved using `cy.request(options)`.
