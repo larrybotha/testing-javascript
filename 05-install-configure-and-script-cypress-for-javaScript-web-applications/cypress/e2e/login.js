@@ -12,14 +12,9 @@ describe('user login', () => {
         .getByText(/submit/i)
         .click()
 
-        // assert that we have been directed to the correct location
-        .url()
-        .should('eq', `${Cypress.config().baseUrl}/`)
-        .window()
-        .its('localStorage.token')
-        .should('be.a', 'string')
-        .getByTestId('username-display', {timeout: 500})
-        .should('have.text', user.username)
+        // use our custom Cypress commands for common assertions
+        .assertHome()
+        .assertDisplaysUsername(user)
     })
   })
 })

@@ -221,3 +221,14 @@ Checkout individual branches for changes specific to that section of the course.
       cy.request(options)
     })
     ```
+
+13. Use custom Cypress command for reusable assertions
+
+    [`cypress/support.commands.js`](./cypress/support/commands.js)
+
+    Different tests will often require the same assertions - does logging in take
+    the user to the home page, does registration take a user to the same page?
+
+    Instead of writing the same assertions in multiple tests, we can move those
+    assertions to the `commands.js` file in the `support` folder, and then reuse
+    the custom commands in our tests.

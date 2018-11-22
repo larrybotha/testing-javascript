@@ -15,3 +15,17 @@ Cypress.Commands.add('createUser', overrides => {
     // will be available
     .then(response => response.body.user)
 })
+
+// we can create reusable assertions using custom Cypress commands so that we don't
+// rewrite the same asserts that different tests require
+Cypress.Commands.add('assertHome', () => {
+  cy.url().should('eq', `${Cypress.config().baseUrl}/`)
+})
+
+Cypress.Commands.add('assertDisplaysUsername', user => {
+  cy.window()
+    .its('localStorage.token')
+    .should('be.a', 'string')
+    .getByTestId('username-display', {timeout: 500})
+    .should('have.text', user.username)
+})

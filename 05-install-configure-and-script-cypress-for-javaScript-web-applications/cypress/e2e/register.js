@@ -19,21 +19,10 @@ describe('user registration', () => {
       .type(user.password)
       .getByText(/submit/i)
       .click()
-      .url()
-      // we have access to the config via Cypress.config()
-      // .should('eq', 'http://localhost:8080/')
-      .should('eq', `${Cypress.config().baseUrl}/`)
-      // make window our subject
-      .window()
-      // so that we can evaluate the token which should be written to localStorage
-      .its('localStorage.token')
-      // using the be.a assertsion which appears to evaluate types
-      .should('be.a', 'string')
-      // get the element with testid of username-display, and set the timeout to
-      // less than the default 4000ms that Cypress uses, because if don't have it
-      // by now, we're probabliy not going to get it at all
-      .getByTestId('username-display', {timeout: 500})
-      .should('have.text', user.username)
+
+      // use our custom Cypress commands for common assertions
+      .assertHome()
+      .assertDisplaysUsername(user)
   })
 
   it(`shows an error message if the server response is an error`, () => {
