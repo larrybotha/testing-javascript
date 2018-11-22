@@ -232,3 +232,16 @@ Checkout individual branches for changes specific to that section of the course.
     Instead of writing the same assertions in multiple tests, we can move those
     assertions to the `commands.js` file in the `support` folder, and then reuse
     the custom commands in our tests.
+
+14. Run tests as an authenticated user with Cypress
+
+    [`calculator.js`](./cypress/e2e/calculator.js)
+
+    We've tested the calculator for anonymous users, but we don't yet know that
+    authenticated users will not be affected by changes to the application.
+
+    We can create a user, log them in, and then assert that they are in fact
+    logged in.
+
+    We can then log them out, and then assert that they are in fact logged out,
+    too.
