@@ -14,7 +14,7 @@ describe('user login', () => {
 
         // use our custom Cypress commands for common assertions
         .assertHome()
-        .assertDisplaysUsername(user)
+        .assertLoggedInAs(user)
     })
   })
 })

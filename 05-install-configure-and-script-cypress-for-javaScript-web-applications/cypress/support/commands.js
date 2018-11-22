@@ -22,7 +22,7 @@ Cypress.Commands.add('assertHome', () => {
   cy.url().should('eq', `${Cypress.config().baseUrl}/`)
 })
 
-Cypress.Commands.add('assertDisplaysUsername', user => {
+Cypress.Commands.add('assertLoggedInAs', user => {
   cy.window()
     .its('localStorage.token')
     .should('be.a', 'string')
