@@ -22,7 +22,7 @@ describe('user registration', () => {
 
       // use our custom Cypress commands for common assertions
       .assertHome()
-      .assertDisplaysUsername(user)
+      .assertLoggedInAs(user)
   })
 
   it(`shows an error message if the server response is an error`, () => {
