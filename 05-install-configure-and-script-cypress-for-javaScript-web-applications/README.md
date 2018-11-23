@@ -256,3 +256,12 @@ Checkout individual branches for changes specific to that section of the course.
     Instead of running through the entire flow, we can use `cy.request` to make
     a request directly to the API, and then use `window.localStorage` to set the
     token in `localStorage`, before running any assertions.
+
+16. **Use a custom Cypress command to login as a user**
+
+    [`commands.js`](./cypress/support/commands.js)
+
+    [`calculator.js`](./cypress/e2e/calculator.js)
+
+    The login request in `calculator.js` will likely be needed by other tests,
+    so we can create a custom command to reuse it later.
