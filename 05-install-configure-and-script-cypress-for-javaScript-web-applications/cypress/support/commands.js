@@ -29,3 +29,13 @@ Cypress.Commands.add('assertLoggedInAs', user => {
     .getByTestId('username-display', {timeout: 500})
     .should('have.text', user.username)
 })
+
+Cypress.Commands.add('login', user => {
+  cy.request({
+    url: 'http://localhost:3000/login',
+    method: 'POST',
+    body: user,
+  }).then(response => {
+    window.localStorage.setItem('token', response.body.user.token)
+  })
+})

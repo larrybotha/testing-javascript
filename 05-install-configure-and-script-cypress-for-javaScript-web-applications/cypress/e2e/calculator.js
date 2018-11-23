@@ -23,18 +23,10 @@ describe('anonymous calculator', () => {
 describe('authenticated calculator', () => {
   it(`displays the user's name`, () => {
     cy.createUser().then(user => {
-      // we're already testing the log in flow in login.js, so doing it again is
-      // redundant.
-      // Instead, we can make a request to our API directly, and then evaluate
-      // that.
-      cy.request({
-        url: 'http://localhost:3000/login',
-        method: 'POST',
-        body: user,
-      })
-        .then(response => {
-          window.localStorage.setItem('token', response.body.user.token)
-        })
+      // the log in request will likely be required by other tests, so we can
+      // create a custom command to do the heavy lifting and make the request
+      // reusable
+      cy.login(user)
         .visit('/')
 
         // assert that they are in fact logged in
