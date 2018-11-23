@@ -274,3 +274,31 @@ Checkout individual branches for changes specific to that section of the course.
 
     To make things even smother, we can use commands within commands. Doing
     this we can combine creating a user and logging them in into a single step.
+
+18. **Install React DevTools with Cypress**
+
+    To use React Devtools in Cypress we need to first install the Chrome
+    extension.
+
+    Once that's done, we'll only have access to the Cypress component that the
+    Cypress UI is built with, because our application is actually running in an
+    iframe.
+
+    To provide that iframe with context for Devtools to have access to
+    components inside it, we need to set the same variable that React Devtools
+    adds to the `window`.
+
+    This is `window.__REACT_DEVTOOLS_GLOBAL_HOOK__`. To provide context within
+    the iframe, we need to set that variable to that of the parent window (where
+    React has defined the variable):
+
+    ```javascript
+    if (window.Cypres) {
+      window.__REACT_DEVTOOLS_GLOBAL_HOOK__ =
+        window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__
+    }
+    ```
+
+    This needs to be executed before React runs in our app.
+
+    Now, in addition to the Cypress app, we can inspect our own app.
