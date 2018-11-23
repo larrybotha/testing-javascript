@@ -22,7 +22,7 @@ describe('anonymous calculator', () => {
 // test the calculaor for an authenticated user
 describe('authenticated calculator', () => {
   it(`displays the user's name`, () => {
-    cy.loginNewUser().then(user => {
+    cy.loginAsNewUser().then(user => {
       cy.visit('/')
 
         // assert that they are in fact logged in
