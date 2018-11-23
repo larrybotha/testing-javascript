@@ -1,3 +1,4 @@
+import './react-devtools'
 import './global.css'
 import React from 'react'
 import {Router} from '@reach/router'
