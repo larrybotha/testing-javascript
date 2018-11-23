@@ -265,3 +265,12 @@ Checkout individual branches for changes specific to that section of the course.
 
     The login request in `calculator.js` will likely be needed by other tests,
     so we can create a custom command to reuse it later.
+
+17. **Combine custom Cypress commands into a single custom command**
+
+    [`commands.js`](./cypress/support/commands.js)
+
+    [`calculator.js`](./cypress/e2e/calculator.js)
+
+    To make things even smother, we can use commands within commands. Doing
+    this we can combine creating a user and logging them in into a single step.

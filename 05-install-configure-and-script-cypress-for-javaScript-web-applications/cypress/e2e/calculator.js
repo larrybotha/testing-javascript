@@ -22,12 +22,8 @@ describe('anonymous calculator', () => {
 // test the calculaor for an authenticated user
 describe('authenticated calculator', () => {
   it(`displays the user's name`, () => {
-    cy.createUser().then(user => {
-      // the log in request will likely be required by other tests, so we can
-      // create a custom command to do the heavy lifting and make the request
-      // reusable
-      cy.login(user)
-        .visit('/')
+    cy.loginNewUser().then(user => {
+      cy.visit('/')
 
         // assert that they are in fact logged in
         .assertLoggedInAs(user)

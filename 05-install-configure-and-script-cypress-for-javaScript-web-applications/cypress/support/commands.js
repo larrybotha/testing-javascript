@@ -37,5 +37,15 @@ Cypress.Commands.add('login', user => {
     body: user,
   }).then(response => {
     window.localStorage.setItem('token', response.body.user.token)
+
+    // return the user so that `.then` has access to it inside tests
+    return response.body.user
+  })
+})
+
+// add a command to combine registering and logging in of a new user
+Cypress.Commands.add('loginAsNewUser', () => {
+  cy.createUser().then(user => {
+    cy.login(user)
   })
 })
