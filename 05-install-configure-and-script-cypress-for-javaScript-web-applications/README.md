@@ -222,7 +222,7 @@ Checkout individual branches for changes specific to that section of the course.
     })
     ```
 
-13. Use custom Cypress command for reusable assertions
+13. **Use custom Cypress command for reusable assertions**
 
     [`cypress/support.commands.js`](./cypress/support/commands.js)
 
@@ -233,7 +233,7 @@ Checkout individual branches for changes specific to that section of the course.
     assertions to the `commands.js` file in the `support` folder, and then reuse
     the custom commands in our tests.
 
-14. Run tests as an authenticated user with Cypress
+14. **Run tests as an authenticated user with Cypress**
 
     [`calculator.js`](./cypress/e2e/calculator.js)
 
@@ -245,3 +245,14 @@ Checkout individual branches for changes specific to that section of the course.
 
     We can then log them out, and then assert that they are in fact logged out,
     too.
+
+15. **Use `cy.request` from Cypress to authenticate as a new user**
+
+    [`calculator.js`](./cypress/e2e/calculator.js)
+
+    In our last update to calculator we rewrote the log in flow that is already
+    tested in `login.js`.
+
+    Instead of running through the entire flow, we can use `cy.request` to make
+    a request directly to the API, and then use `window.localStorage` to set the
+    token in `localStorage`, before running any assertions.
