@@ -23,6 +23,7 @@
     "@babel/preset-react": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "is-ci-cli": "1.1.1",
-    "jest": "23.6.0"
+    "jest": "23.6.0",
+    "jest-dom": "2.1.1"
   }
 }
