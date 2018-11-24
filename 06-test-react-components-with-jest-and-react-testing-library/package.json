@@ -1,0 +1,28 @@
+{
+  "name": "06-test-react-components-with-jest-and-react-testing-library",
+  "version": "1.0.0",
+  "description": "Checkout individual branches for changes specific to that section of the course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "is-ci 'test:all' 'test:watch'",
+    "test:all": "jest",
+    "test:watch": "npm run test:all -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "16.6.3",
+    "react-dom": "16.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.1.6",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
+    "@babel/preset-env": "7.1.6",
+    "@babel/preset-react": "7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "is-ci-cli": "1.1.1",
+    "jest": "23.6.0"
+  }
+}
