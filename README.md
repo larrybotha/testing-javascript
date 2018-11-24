@@ -7,3 +7,4 @@ Notes and annotations from Kent C. Dodds' Testing Javascript course: https://tes
 3. [JavaScript Mocking Fundamentals](./03-javascript-mocking-fundamentals)
 4. [Configure Jest for Testing JavaScript Applications](./04-configure-jest-for-javascript-applications)
 5. [install, configure, and script Cypress for JavaScript web applications](./05-install-configure-and-script-cypress-for-javaScript-web-applications)
+6. [Test React Components with Jest and `react-testing-library`](./06-test-react-components-with-jest-and-react-testing-library)
