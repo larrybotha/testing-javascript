@@ -22,6 +22,7 @@
     "@babel/preset-env": "7.1.6",
     "@babel/preset-react": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
+    "dom-testing-library": "3.12.4",
     "is-ci-cli": "1.1.1",
     "jest": "23.6.0",
     "jest-dom": "2.1.1"
