@@ -68,3 +68,15 @@ Checkout individual branches for changes specific to that section of the course.
 
    `dom-testing-library` has a convenient export that allows us to retrieve all
    the query methods that it exports but for a specific element.
+
+4. **Use `react-testing-library` to render and test React Components**
+
+   ```bash
+   npx jest favorite
+   ```
+
+   If we abstract the rendering of our component, as well as getting all the
+   queries for the container, to its own function, that function can be used to
+   query all React components.
+
+   Turns out, this is exactly what `react-testing-library` does!
