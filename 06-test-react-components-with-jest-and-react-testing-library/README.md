@@ -80,3 +80,24 @@ Checkout individual branches for changes specific to that section of the course.
    query all React components.
 
    Turns out, this is exactly what `react-testing-library` does!
+
+5. **Avoid Memory leaks using react-testing-library’s cleanup function**
+
+    `react-testing-library`'s `render` function works differently from our naive
+    implementation.
+
+    React components are rendered onto the `body` element so that we have full
+    access to all DOM eventing.
+
+    The problem here is that if we don't remove attached events, and don't
+    remove rendered components, we're prone to memory leaks and faulty tests.
+
+    To address this we have a few options:
+
+    1. use `unmount` exported from calling `render` to unmount our component
+       once a test has run
+    2. import `cleanup` to manually clean up the DOM after a test has run
+    3. pass `cleanup` to Jest's `afterEach` hook to automatically clean up the
+       DOM after each test runs
+    4. import `react-testing-library/cleanup-after-each` which will run Jest's
+       `afterEach` hook with `cleanup` for us
