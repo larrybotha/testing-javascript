@@ -1,14 +1,9 @@
-// we can import specific matchers to make assertions easier
-// import {toHaveAttribute, toHaveTextContent} from 'jest-dom';
 import 'jest-dom/extend-expect';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {getQueriesForElement, queries} from 'dom-testing-library';
 
 import {FavoriteNumber} from '../src/favorite-number';
-
-// you can manually extend expect if choosing not to use the import which
-// automatically extends expect
-// expect.extend({toHaveAttribute, toHaveTextContent});
 
 describe('FavoriteNumber', () => {
   test('renders a number input with a label "Favorite Number"', () => {
@@ -16,13 +11,21 @@ describe('FavoriteNumber', () => {
 
     ReactDOM.render(<FavoriteNumber />, div);
 
-    // instead of checking these properties ourselves, we can mitigate issues,
-    // such as typos, by offloading the heavy lifting to jest-dom
-    // expect(div.querySelector('input').type).toBe('number');
-    // expect(div.querySelector('label').textContent).toBe('Favorite Number');
+    // using dom-testing-library we can rather query for the input by its label.
+    // This way, if there is a typo on the label, we'll pick up the issue
+    // straight away.
+    // const input = queries.getByLabelText(div, 'Favorite Number');
 
-    // use the matchers we've extends expect with
-    expect(div.querySelector('input')).toHaveAttribute('type', 'number');
+    // testing for label text is brittle because tests will break if case
+    // changes. Instead, query using a case-insensitive regex
+    // const input = queries.getByLabelText(div, /favorite number/i);
+
+    // instead of explicit imports for queries, we can get all the query methods
+    // from dom-testing-library
+    const {getByLabelText} = getQueriesForElement(div);
+    const input = getByLabelText(/favorite number/i);
+
+    expect(input).toHaveAttribute('type', 'number');
     expect(div.querySelector('label')).toHaveTextContent('Favorite Number');
   });
 });
