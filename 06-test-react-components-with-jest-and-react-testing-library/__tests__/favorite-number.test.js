@@ -27,7 +27,9 @@ describe('FavoriteNumber', () => {
     // will be passed to the event handler.
     fireEvent.change(input, {target: {value: 10}});
 
-    expect(queryByTestId('error-message')).toBeTruthy();
+    expect(queryByTestId('error-message')).toHaveTextContent(
+      /the number is invalid/i
+    );
     debug();
   });
 });
