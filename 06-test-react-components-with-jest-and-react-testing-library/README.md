@@ -101,3 +101,16 @@ Checkout individual branches for changes specific to that section of the course.
        DOM after each test runs
     4. import `react-testing-library/cleanup-after-each` which will run Jest's
        `afterEach` hook with `cleanup` for us
+
+6. **Debug the DOM state during tests using react-testing-library’s debug
+   function**
+
+    It'd be convenient if one could inspect the result of rendering a React
+    component.
+
+    `react-testing-library`s `render` method returns `debug` function which does
+    exactly this.
+
+    By running `debug()` we'll have a pretty-printed result of our component
+    printed to the console in our tests. Passing in a queried element will
+    render only that element.
