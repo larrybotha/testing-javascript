@@ -123,3 +123,19 @@ Checkout individual branches for changes specific to that section of the course.
     `fireEvent` has a number of event methods on it, such as `.change`,
     `.click`, etc. that can be dispatched on an element. A second parameter
     passes values through to the event handler.
+
+8. **Assert rendered text with react-testing-library**
+
+    There are a number of ways we can assert that specific text exists in the
+    DOM.
+
+    The first is by using the `container` property exported by `render`, and
+    asserting it has text using `.toHaveTextContent`.
+
+    The second is by using the `getByText` query returned by `render` to
+    validate if an element exists. `getByText` throws an error if an element
+    can't be found. This is true for all the `get` methods returned by `render`.
+
+    The third is to use the `getByTestId` method that `render` exports along
+    with a `data-testid` attribute on the element whose content you want to
+    validate exists.
