@@ -23,6 +23,8 @@ describe('FavoriteNumber', () => {
 
     expect(queryByTestId('error-message')).toBeFalsy();
 
+    // dispatch a 'change' event on the input, providing an event object that
+    // will be passed to the event handler.
     fireEvent.change(input, {target: {value: 10}});
 
     expect(queryByTestId('error-message')).toBeTruthy();
