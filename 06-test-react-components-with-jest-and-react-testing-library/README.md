@@ -121,4 +121,5 @@ Checkout individual branches for changes specific to that section of the course.
     `fireEvent` export.
 
     `fireEvent` has a number of event methods on it, such as `.change`,
-    `.click`, etc. that can be dispatched on an element.
+    `.click`, etc. that can be dispatched on an element. A second parameter
+    passes values through to the event handler.
