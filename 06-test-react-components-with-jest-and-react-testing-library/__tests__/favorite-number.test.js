@@ -8,11 +8,15 @@ import {FavoriteNumber} from '../src/favorite-number';
 
 describe('FavoriteNumber', () => {
   test('renders a number input with a label "Favorite Number"', () => {
-    const {getByLabelText} = render(<FavoriteNumber />);
+    const {debug, getByLabelText} = render(<FavoriteNumber />);
     const input = getByLabelText(/favorite number/i);
 
-    console.log(document.body.outerHTML);
+    // print out the entire rendered output
+    debug();
 
     expect(input).toHaveAttribute('type', 'number');
+
+    // print out only the input
+    debug(input);
   });
 });
