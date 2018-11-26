@@ -114,3 +114,12 @@ Checkout individual branches for changes specific to that section of the course.
     By running `debug()` we'll have a pretty-printed result of our component
     printed to the console in our tests. Passing in a queried element will
     render only that element.
+
+7. **Test React Component Event Handlers with fireEvent from react-testing-library**
+
+    We can trigger events on elements by using `react-testing-library`s
+    `fireEvent` export.
+
+    `fireEvent` has a number of event methods on it, such as `.change`,
+    `.click`, etc. that can be dispatched on an element. A second parameter
+    passes values through to the event handler.
