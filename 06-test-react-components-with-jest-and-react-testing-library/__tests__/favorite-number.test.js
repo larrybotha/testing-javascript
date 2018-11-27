@@ -32,4 +32,17 @@ describe('FavoriteNumber', () => {
     );
     debug();
   });
+
+  test('a prop change with an invalid value shows the error message', () => {
+    const {getByTestId, getByLabelText, rerender} = render(<FavoriteNumber />);
+    const input = getByLabelText(/favorite number/i);
+
+    fireEvent.change(input, {target: {value: 6}});
+
+    rerender(<FavoriteNumber max={5} />);
+
+    expect(getByTestId('error-message')).toHaveTextContent(
+      /the number is invalid/i
+    );
+  });
 });
