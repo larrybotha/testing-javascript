@@ -11,31 +11,30 @@ describe('FavoriteNumber', () => {
     const {debug, getByLabelText} = render(<FavoriteNumber />);
     const input = getByLabelText(/favorite number/i);
 
-    // debug();
-
     expect(input).toHaveAttribute('type', 'number');
   });
 
   test('entering an invalid value shows an error message', () => {
     const {debug, queryByTestId, getByLabelText} = render(<FavoriteNumber />);
-    // debug();
     const input = getByLabelText(/favorite number/i);
 
     expect(queryByTestId('error-message')).toBeFalsy();
 
-    // dispatch a 'change' event on the input, providing an event object that
-    // will be passed to the event handler.
     fireEvent.change(input, {target: {value: 10}});
 
     expect(queryByTestId('error-message')).toHaveTextContent(
       /the number is invalid/i
     );
-    // debug();
   });
 
   test('a prop change with an invalid value shows the error message', () => {
-    const {getByTestId, getByLabelText, rerender} = render(<FavoriteNumber />);
+    const {getByTestId, getByLabelText, queryByTestId, rerender} = render(
+      <FavoriteNumber />
+    );
     const input = getByLabelText(/favorite number/i);
+
+    // use a query to confirm that the element does not exist
+    expect(queryByTestId('error-message')).toBeFalsy();
 
     fireEvent.change(input, {target: {value: 6}});
 
