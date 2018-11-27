@@ -139,3 +139,8 @@ Checkout individual branches for changes specific to that section of the course.
     The third is to use the `getByTestId` method that `render` exports along
     with a `data-testid` attribute on the element whose content you want to
     validate exists.
+
+9. **Test prop updates with `react-testing-library`**
+
+    We can simulate prop updates to components using the `rerender` method
+    returned by `render`.
