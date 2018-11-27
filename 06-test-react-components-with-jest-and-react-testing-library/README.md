@@ -144,3 +144,15 @@ Checkout individual branches for changes specific to that section of the course.
 
     We can simulate prop updates to components using the `rerender` method
     returned by `render`.
+
+10. **Assert that something is NOT rendered with `react-testing-library`**
+
+    The `.get` methods returned from `render` throw errors if an element can't
+    be found in the DOM. This will result in tests erroring, even if we're
+    testing for the non-existence of elements.
+
+    To assert that elements do not exist, there are matching `.query` methods
+    that `render` returns that return `null` instead of throwing an error.
+
+    We can then use `expect(queryByX()).toBeFalsy()` to assert that the elements
+    don't exist.
