@@ -163,6 +163,8 @@ Checkout individual branches for changes specific to that section of the course.
      npx jest form
      ```
 
+     [`__tests__/form.test.js`](./__tests__/form.test.js)
+
     Using `jest-axe` we can assert the accessibility of our components.
 
     The `axe` export from `jest-axe` is accepts a DOM node, and is async, so we
