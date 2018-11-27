@@ -156,3 +156,19 @@ Checkout individual branches for changes specific to that section of the course.
 
     We can then use `expect(queryByX()).toBeFalsy()` to assert that the elements
     don't exist.
+
+11. **Test accessibility of rendered React Components with jest-axe**
+
+     ```bash
+     npx jest form
+     ```
+
+    Using `jest-axe` we can assert the accessibility of our components.
+
+    The `axe` export from `jest-axe` is accepts a DOM node, and is async, so we
+    need tests containing a11y assertions to be `async / await`.
+
+    `jest-axe` also exports a `toHaveNoViolations` matcher which can either be
+    made avilable in assertions using `expect.extend(toHaveNoViolations)`, or
+    can be automatically extended on `expect` by importing
+    `jest-axe/extend-expect`.
