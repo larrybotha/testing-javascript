@@ -83,6 +83,10 @@ Checkout individual branches for changes specific to that section of the course.
 
 5. **Avoid Memory leaks using react-testing-library’s cleanup function**
 
+     ```bash
+     npx jest favorite
+     ```
+
     `react-testing-library`'s `render` function works differently from our naive
     implementation.
 
@@ -105,6 +109,10 @@ Checkout individual branches for changes specific to that section of the course.
 6. **Debug the DOM state during tests using react-testing-library’s debug
    function**
 
+     ```bash
+     npx jest favorite
+     ```
+
     It'd be convenient if one could inspect the result of rendering a React
     component.
 
@@ -117,6 +125,10 @@ Checkout individual branches for changes specific to that section of the course.
 
 7. **Test React Component Event Handlers with fireEvent from react-testing-library**
 
+     ```bash
+     npx jest favorite
+     ```
+
     We can trigger events on elements by using `react-testing-library`s
     `fireEvent` export.
 
@@ -125,6 +137,10 @@ Checkout individual branches for changes specific to that section of the course.
     passes values through to the event handler.
 
 8. **Assert rendered text with react-testing-library**
+
+     ```bash
+     npx jest favorite
+     ```
 
     There are a number of ways we can assert that specific text exists in the
     DOM.
@@ -142,10 +158,18 @@ Checkout individual branches for changes specific to that section of the course.
 
 9. **Test prop updates with `react-testing-library`**
 
+     ```bash
+     npx jest favorite
+     ```
+
     We can simulate prop updates to components using the `rerender` method
     returned by `render`.
 
 10. **Assert that something is NOT rendered with `react-testing-library`**
+
+     ```bash
+     npx jest favorite
+     ```
 
     The `.get` methods returned from `render` throw errors if an element can't
     be found in the DOM. This will result in tests erroring, even if we're
