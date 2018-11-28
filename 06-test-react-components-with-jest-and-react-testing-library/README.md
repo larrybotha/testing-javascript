@@ -205,7 +205,7 @@ Checkout individual branches for changes specific to that section of the course.
      npx jest greeting
      ```
 
-     [`__tests__/greeting-loader-mock.test.js`](./__tests__/greeting-loader-mock.test.js)
+     [`__tests__/greeting-loader-mock-01.test.js`](./__tests__/greeting-loader-mock-01.test.js)
 
     To test `async/await` we need to
 
