@@ -198,3 +198,7 @@ Checkout individual branches for changes specific to that section of the course.
     made avilable in assertions using `expect.extend(toHaveNoViolations)`, or
     can be automatically extended on `expect` by importing
     `jest-axe/extend-expect`.
+
+12. **Mock HTTP Requests with jest.mock in React Component Tests**
+
+
