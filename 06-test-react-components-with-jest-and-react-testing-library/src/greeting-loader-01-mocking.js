@@ -23,3 +23,5 @@ class GreetingLoader extends Component {
     );
   }
 }
+
+export {GreetingLoader}
