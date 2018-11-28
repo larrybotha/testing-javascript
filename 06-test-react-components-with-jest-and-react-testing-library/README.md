@@ -205,7 +205,7 @@ Checkout individual branches for changes specific to that section of the course.
      npx jest greeting
      ```
 
-     [`__tests__/greeting-loader-mock.test.js`](./__tests__/greeting-loader-mock.test.js)
+     [`__tests__/greeting-loader-mock-01.test.js`](./__tests__/greeting-loader-mock-01.test.js)
 
     To test `async/await` we need to
 
@@ -216,3 +216,20 @@ Checkout individual branches for changes specific to that section of the course.
     4. assert the response from calling the api response inside the callback
        that `wait` expects
 
+13. **Mock HTTP Requests with Dependency Injection in React Component Tests**
+
+     ```bash
+     npx jest greeting
+     ```
+
+     [`__tests__/greeting-loader-mock-02.test.js`](./__tests__/greeting-loader-mock-02.test.js)
+
+    As an alternative to mocking, one can use dependency injection by setting
+    the api call as a default prop on the component, mocking it in the test, and
+    passing it through explicitly.
+
+    This technique requires having to change your implementation of your
+    component.
+
+    It's most useful when you're in an environment where you can't make use of
+    Jest's mocking capabilities, such as when in Storybook.
