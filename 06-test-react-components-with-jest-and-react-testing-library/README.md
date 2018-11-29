@@ -233,3 +233,18 @@ Checkout individual branches for changes specific to that section of the course.
 
     It's most useful when you're in an environment where you can't make use of
     Jest's mocking capabilities, such as when in Storybook.
+
+14. **Mock react-transition-group in React Component Tests with jest.mock**
+
+     ```bash
+     npx jest hidden
+     ```
+
+     [`__tests__/hidden-message.test.js`](./__tests__/hidden-message.test.js)
+
+    If we have components which rely on animations, it'd be a waste of time, as
+    well as frustrating, to have our tests wait for animations to complete in
+    order to run assertions.
+
+    To get around this, we can mock the implementation of external libraries to
+    remove any timeouts or delays.
