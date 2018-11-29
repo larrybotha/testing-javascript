@@ -248,3 +248,72 @@ Checkout individual branches for changes specific to that section of the course.
 
     To get around this, we can mock the implementation of external libraries to
     remove any timeouts or delays.
+
+15. **Test componentDidCatch handler error boundaries with react-testing-library**
+
+     ```bash
+     npx jest error
+     ```
+
+     [`__tests__/error-boundary.test.js`](./__tests__/error-boundary.test.js)
+
+    To test error boundaries in our `error-boundary.js` component we need to do
+    a few things:
+
+    1. mock out our API request
+    2. create a component that simulates an error being thrown
+    3. make our test output less cluttered by mocking out `console.error`
+    4. assert that `console.error` is being called the correct number of times,
+       since we may be losing important information by squashing the output
+    5. assert that the `reportError` API call we mock is being called the
+       correct number of times, and with the correct parameters
+    6. assert that our component is displaying the correct text when there's an
+       error
+    7. assert that when there is no error that `renderError` is not called, and
+       that our component does not output the error text
+
+    To mock out `console.error` we need to use `beforeEach` to mock it out
+    before each test runs, and restore it after each test using `afterEach`. To
+    create the mock we need to use Jest's `.spyOn` method along with
+    `.mockImplementation`:
+
+    ```javascript
+    // silence console.error ouptut in our tests
+    jest.spyOn(console, 'error').mockImplementation(() => {})
+    ```
+
+    First we render our component without any errors. We could, at this point,
+    assert that it's outputting as expected.
+
+    Then we `rerender` with an error, at which point we can assert that
+    `console.error` and `reportError` were called. We need to assert that
+    `renderError` was not only called, but called with the parameters that we
+    expect, using `.toHaveBeenCalledWith`.
+
+    Instead of matching literals, we can specify constructors for Jest to match
+    against. This prevents us from having to know exactly what to match against,
+    and instead provide something more abstract to match against.
+
+    ```javascript
+    const error = expect.any(Error)
+    const info = {someProp: expect.stringContaining('foo')}
+    ```
+
+    Once we've asserted that our component is correctly displaying and handling
+    function calls when there is an error, we can assert that it's working
+    without issue.
+
+    We should first reset our mocks so that we don't need to be concerned with
+    the previous number of calls and the parameters in those calls:
+
+    ```javascript
+    console.error.mockReset()
+    mockReportError.mockReset()
+    ```
+
+    We can then manually `rerender` our component without throwing an error. At this
+    stage our component's state is still unchanged, so it's still showing that
+    there was an error.
+
+    We can fire a click event on the button, which will cause a rerender,
+    allowing us to assert against a component without an error.
