@@ -321,7 +321,7 @@ Checkout individual branches for changes specific to that section of the course.
 16. **Test drive the development of a React Form with react-testing-library**
 
      ```bash
-     npx jest post-editor
+     npx jest post-editor-01
      ```
 
      [`__tests__/post-editor-01-markup.test.js`](./__tests__/post-editor-01-markup.test.js)
@@ -331,3 +331,18 @@ Checkout individual branches for changes specific to that section of the course.
      Using the `.getBy` functions that `render` exports allows one to assert
      that components are rendering without an explicit `expect`. This is because
      if the components didn't exist, the `.getBy` functions would throw errors.
+
+17. **Test drive the submission of a React Form with react-testing-library**
+
+     ```bash
+     npx jest post-editor-02
+     ```
+
+     [`__tests__/post-editor-02-markup.test.js`](./__tests__/post-editor-02-markup.test.js)
+
+     First add a test to ensure that after the submit button is clicked it is
+     disabled to prevent additional requests.
+
+     Once we have a failing test, update the component by adding a submit
+     handler, and setting the state so that the button is disabled after it is
+     clicked.
