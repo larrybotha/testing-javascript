@@ -327,3 +327,7 @@ Checkout individual branches for changes specific to that section of the course.
      [`__tests__/post-editor-01-markup.test.js`](./__tests__/post-editor-01-markup.test.js)
 
      Red, green, refactor.
+
+     Using the `.getBy` functions that `render` exports allows one to assert
+     that components are rendering without an explicit `expect`. This is because
+     if the components didn't exist, the `.getBy` functions would throw errors.
