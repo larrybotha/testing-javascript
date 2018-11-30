@@ -346,3 +346,42 @@ Checkout individual branches for changes specific to that section of the course.
      Once we have a failing test, update the component by adding a submit
      handler, and setting the state so that the button is disabled after it is
      clicked.
+
+18. **Test drive the API call of a React Form with react-testing-library**
+
+     ```bash
+     npx jest post-editor-03
+     ```
+
+     [`__tests__/post-editor-03-markup.test.js`](./__tests__/post-editor-03-markup.test.js)
+
+      We need to assert that when the form is submitted that our API is called
+      to actually save the post.
+
+      We don't want to make the actual request, but we do want to confirm that
+      the function will be called and called with the correct parameters.
+
+      We need to:
+
+      1. mock the API call
+      2. import the mocked function so we can assert against it
+      3. clear the mock after each test so that it doesn't interfere with other
+         tests we may add to the file
+      4. assert the number of times its called, and the payload it receives
+
+      To assert that it is called with the correct payload, we need to:
+
+      1. set the values on the inputs
+      2. get the values in the submit handler
+
+      To get the form values in the submit handler we use the name attribute on
+      fields, and extract the components from the `event`:
+
+      ```javascript
+      const {name1, name2, name3} = event.target.elements;
+      const payload = {
+        v1: name1.value,
+        v2: name2.value,
+        v3: name3.value,
+      };
+      ```
