@@ -317,3 +317,13 @@ Checkout individual branches for changes specific to that section of the course.
 
     We can fire a click event on the button, which will cause a rerender,
     allowing us to assert against a component without an error.
+
+16. **Test drive the development of a React Form with react-testing-library**
+
+     ```bash
+     npx jest post-editor
+     ```
+
+     [`__tests__/post-editor-01-markup.test.js`](./__tests__/post-editor-01-markup.test.js)
+
+     Red, green, refactor.
