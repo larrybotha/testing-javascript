@@ -386,7 +386,7 @@ Checkout individual branches for changes specific to that section of the course.
       };
       ```
 
-19 **Test drive mocking react-router’s Redirect component on a form submission**
+19. **Test drive mocking react-router’s Redirect component on a form submission**
 
      ```bash
      npx jest post-editor-04
@@ -412,3 +412,4 @@ Checkout individual branches for changes specific to that section of the course.
 
      It's best to keep the number of tests inside `wait` as low as possible to
      ensure faster test runs.
+
