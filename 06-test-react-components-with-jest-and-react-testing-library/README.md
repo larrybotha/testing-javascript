@@ -385,3 +385,30 @@ Checkout individual branches for changes specific to that section of the course.
         v3: name3.value,
       };
       ```
+
+19 **Test drive mocking react-router’s Redirect component on a form submission**
+
+     ```bash
+     npx jest post-editor-04
+     ```
+
+     [`__tests__/post-editor-04-markup.test.js`](./__tests__/post-editor-04-markup.test.js)
+
+     To mock `Redirect` from `react-router` we need to:
+
+     1. import `Redirect` from `react-router` so that we can assert on it
+     2. name `Redirect` as `MockRedirect` so that we can easily see that we're
+        asserting on a mocked function
+     3. Use `jest.mock` to mock out `react-router` and specifically `Redirect`
+     4. Make our test async
+     5. Use `wait` from `react-testing-library` to assert that `MockRedirect`
+        was indeed called
+     6. Assert that the redirect is called with the path we specify
+     7. clear our mocked redirect after every test runs to clean things up
+
+     `react-testing-library`'s `wait` executes each assertion every 15ms for 4s
+     for each assertion. If there are 4 assertions inside `wait`, and 1 of them
+     fails, we will only know after 16s.
+
+     It's best to keep the number of tests inside `wait` as low as possible to
+     ensure faster test runs.
