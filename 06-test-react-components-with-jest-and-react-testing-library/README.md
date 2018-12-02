@@ -413,3 +413,14 @@ Checkout individual branches for changes specific to that section of the course.
      It's best to keep the number of tests inside `wait` as low as possible to
      ensure faster test runs.
 
+20. **Test drive assertions with dates in React**
+
+     ```bash
+     npx jest post-editor-05
+     ```
+
+     [`__tests__/post-editor-05-markup.test.js`](./__tests__/post-editor-05-markup.test.js)
+
+     To assert something dynamic, such as a date, we can evaluate it against a
+     range. We can set a value before a test runs, and after the value to assert
+     is created, and then assert the value lies between those two values.
