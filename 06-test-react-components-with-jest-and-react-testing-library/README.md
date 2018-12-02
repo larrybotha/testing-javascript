@@ -424,3 +424,14 @@ Checkout individual branches for changes specific to that section of the course.
      To assert something dynamic, such as a date, we can evaluate it against a
      range. We can set a value before a test runs, and after the value to assert
      is created, and then assert the value lies between those two values.
+
+21. **Use generated data in tests with test-data-bot to improve test maintainability**
+
+     ```bash
+     npx jest post-editor-06
+     ```
+
+     [`__tests__/post-editor-06-markup.test.js`](./__tests__/post-editor-06-markup.test.js)
+
+     `test-data-bot` can be used to generate data to help indicate what is
+     important to test, vs what can be created on the fly.
