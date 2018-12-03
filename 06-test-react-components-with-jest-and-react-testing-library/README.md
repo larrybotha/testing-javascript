@@ -489,3 +489,22 @@ Checkout individual branches for changes specific to that section of the course.
 
     We can abstract common render behaviour to a function so that tests are
     easier to read and write.
+
+   ---
+
+24. **Test React components that use the react-router Router Provider with createMemoryHistory**
+
+    ```bash
+    npx jest main
+    ```
+
+    [`__tests__/main-markup.test.js`](./__tests__/main-markup.test.js)
+
+    Components containing components from `react-router-dom` require context in
+    order for them to fucntion. This is provided through a `Router` in
+    applications, so we need to provide this to individual components in order
+    to test them.
+
+    There are two ways to do this, one using `Router` directly and passing in
+    `history` using the `history` module's `createMemoryHistory` function, and
+    the other by using `MemoryRouter` and providing `initialEntries` as a prop.
