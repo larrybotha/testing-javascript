@@ -435,3 +435,46 @@ Checkout individual branches for changes specific to that section of the course.
 
      `test-data-bot` can be used to generate data to help indicate what is
      important to test, vs what can be created on the fly.
+
+22. **Test drive error state with react-testing-library**
+
+     ```bash
+     npx jest post-editor-07
+     ```
+
+     [`__tests__/post-editor-07-markup.test.js`](./__tests__/post-editor-07-markup.test.js)
+
+     To assert that dom nodes exist once errors are thrown from promises we need
+     a mechanism to retrieve the elements once the promise rejected and state
+     has been updated.
+
+     `react-testing-library`'s `waitForElement` does exactly this. We use
+     `await` to wait for `waitForElement` to retreive an element we request
+     inside its callback.
+
+     Once we have that element we can assert on it.
+
+     ---
+
+     To simulate a rejection, we could change our `mockSavePost` implementation,
+     but this would cause other tests to then fail.
+
+     Instead, we can specify that the mock behave in a particular way inside the
+     test, and only once.
+
+     To have `mockSavePost` reject the promise, we use Jest's
+     `mockFn.mockRejectValueOnce` and provide a value that it will reject with.
+
+     ```javascript
+     mockFn.mockRejectValueOnce({foo: 'bar'})
+     ```
+
+     Jest provides a number of ways to handle what and how a function returns:
+
+     - `mockFn.mockReturnThis()`
+     - `mockFn.mockReturnValue(value)`
+     - `mockFn.mockReturnValueOnce(value)`
+     - `mockFn.mockResolvedValue(value)`
+     - `mockFn.mockResolvedValueOnce(value)`
+     - `mockFn.mockRejectedValue(value)`
+     - `mockFn.mockRejectedValueOnce(value)`
