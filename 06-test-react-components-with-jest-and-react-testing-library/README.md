@@ -552,3 +552,15 @@ Checkout individual branches for changes specific to that section of the course.
     There are two ways to do this, one using `Router` directly and passing in
     `history` using the `history` module's `createMemoryHistory` function, and
     the other by using `MemoryRouter` and providing `initialEntries` as a prop.
+
+25. **Initialize the `history` object with a bad entry to test the react-router no-match route**
+
+    ```bash
+    npx jest main
+    ```
+
+    [`__tests__/main.test.js`](./__tests__/main.test.js)
+
+    To test routes that don't match in `react-router` one can either set
+    `initialEntries` in `createMemoryHistory` to an invalid path, or directly as
+    a prop on `MemoryRouter`.
