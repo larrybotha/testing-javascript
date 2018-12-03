@@ -52,4 +52,16 @@ describe('Main', () => {
     expect(queryByTestId('home-route')).not.toBeInTheDocument();
     expect(getByTestId('about-route')).toBeInTheDocument();
   });
+
+  test('displays no match route when no match', () => {
+    const {debug, getByTestId, getByText, queryByTestId, rerender} = render(
+      <MemoryRouter initialEntries={['/foo']}>
+        <Main />
+      </MemoryRouter>
+    );
+
+    expect(getByTestId('no-match-route')).toBeInTheDocument();
+    expect(queryByTestId('home-route')).not.toBeInTheDocument();
+    expect(queryByTestId('about-route')).not.toBeInTheDocument();
+  });
 });
