@@ -23,6 +23,8 @@ Checkout individual branches for changes specific to that section of the course.
    transpile JSX you'll need `@babel/core` and `babel-core@7.0.0-bridge.0`.
    Tests will transpile JSX without any additional libraries or config.
 
+   ---
+
 2. **Use jest-dom for improved assertions**
 
    ```bash
@@ -44,6 +46,8 @@ Checkout individual branches for changes specific to that section of the course.
 
    Another option is to use Jest's `setupTestFrameworkScriptFile` to extend
    `expect` for all files.
+
+   ---
 
 3. **Use dom-testing-library to write more maintainable React tests**
 
@@ -69,6 +73,8 @@ Checkout individual branches for changes specific to that section of the course.
    `dom-testing-library` has a convenient export that allows us to retrieve all
    the query methods that it exports but for a specific element.
 
+   ---
+
 4. **Use `react-testing-library` to render and test React Components**
 
    ```bash
@@ -80,6 +86,8 @@ Checkout individual branches for changes specific to that section of the course.
    query all React components.
 
    Turns out, this is exactly what `react-testing-library` does!
+
+   ---
 
 5. **Avoid Memory leaks using react-testing-library’s cleanup function**
 
@@ -106,6 +114,8 @@ Checkout individual branches for changes specific to that section of the course.
     4. import `react-testing-library/cleanup-after-each` which will run Jest's
        `afterEach` hook with `cleanup` for us
 
+   ---
+
 6. **Debug the DOM state during tests using react-testing-library’s debug
    function**
 
@@ -123,6 +133,8 @@ Checkout individual branches for changes specific to that section of the course.
     printed to the console in our tests. Passing in a queried element will
     render only that element.
 
+    ---
+
 7. **Test React Component Event Handlers with fireEvent from react-testing-library**
 
      ```bash
@@ -135,6 +147,8 @@ Checkout individual branches for changes specific to that section of the course.
     `fireEvent` has a number of event methods on it, such as `.change`,
     `.click`, etc. that can be dispatched on an element. A second parameter
     passes values through to the event handler.
+
+    ---
 
 8. **Assert rendered text with react-testing-library**
 
@@ -156,6 +170,8 @@ Checkout individual branches for changes specific to that section of the course.
     with a `data-testid` attribute on the element whose content you want to
     validate exists.
 
+    ---
+
 9. **Test prop updates with `react-testing-library`**
 
      ```bash
@@ -164,6 +180,8 @@ Checkout individual branches for changes specific to that section of the course.
 
     We can simulate prop updates to components using the `rerender` method
     returned by `render`.
+
+    ---
 
 10. **Assert that something is NOT rendered with `react-testing-library`**
 
@@ -180,6 +198,8 @@ Checkout individual branches for changes specific to that section of the course.
 
     We can then use `expect(queryByX()).toBeFalsy()` to assert that the elements
     don't exist.
+
+    ---
 
 11. **Test accessibility of rendered React Components with jest-axe**
 
@@ -199,6 +219,8 @@ Checkout individual branches for changes specific to that section of the course.
     can be automatically extended on `expect` by importing
     `jest-axe/extend-expect`.
 
+    ---
+
 12. **Mock HTTP Requests with jest.mock in React Component Tests**
 
      ```bash
@@ -215,6 +237,8 @@ Checkout individual branches for changes specific to that section of the course.
     3. import the mocked api function so that we can use it for assertions
     4. assert the response from calling the api response inside the callback
        that `wait` expects
+
+   ---
 
 13. **Mock HTTP Requests with Dependency Injection in React Component Tests**
 
@@ -234,6 +258,8 @@ Checkout individual branches for changes specific to that section of the course.
     It's most useful when you're in an environment where you can't make use of
     Jest's mocking capabilities, such as when in Storybook.
 
+   ---
+
 14. **Mock react-transition-group in React Component Tests with jest.mock**
 
      ```bash
@@ -248,6 +274,8 @@ Checkout individual branches for changes specific to that section of the course.
 
     To get around this, we can mock the implementation of external libraries to
     remove any timeouts or delays.
+
+   ---
 
 15. **Test componentDidCatch handler error boundaries with react-testing-library**
 
@@ -318,6 +346,8 @@ Checkout individual branches for changes specific to that section of the course.
     We can fire a click event on the button, which will cause a rerender,
     allowing us to assert against a component without an error.
 
+   ---
+
 16. **Test drive the development of a React Form with react-testing-library**
 
      ```bash
@@ -331,6 +361,8 @@ Checkout individual branches for changes specific to that section of the course.
      Using the `.getBy` functions that `render` exports allows one to assert
      that components are rendering without an explicit `expect`. This is because
      if the components didn't exist, the `.getBy` functions would throw errors.
+
+   ---
 
 17. **Test drive the submission of a React Form with react-testing-library**
 
@@ -346,6 +378,8 @@ Checkout individual branches for changes specific to that section of the course.
      Once we have a failing test, update the component by adding a submit
      handler, and setting the state so that the button is disabled after it is
      clicked.
+
+   ---
 
 18. **Test drive the API call of a React Form with react-testing-library**
 
@@ -386,6 +420,8 @@ Checkout individual branches for changes specific to that section of the course.
       };
       ```
 
+   ---
+
 19. **Test drive mocking react-router’s Redirect component on a form submission**
 
      ```bash
@@ -413,6 +449,8 @@ Checkout individual branches for changes specific to that section of the course.
      It's best to keep the number of tests inside `wait` as low as possible to
      ensure faster test runs.
 
+   ---
+
 20. **Test drive assertions with dates in React**
 
      ```bash
@@ -425,6 +463,8 @@ Checkout individual branches for changes specific to that section of the course.
      range. We can set a value before a test runs, and after the value to assert
      is created, and then assert the value lies between those two values.
 
+   ---
+
 21. **Use generated data in tests with test-data-bot to improve test maintainability**
 
      ```bash
@@ -435,6 +475,8 @@ Checkout individual branches for changes specific to that section of the course.
 
      `test-data-bot` can be used to generate data to help indicate what is
      important to test, vs what can be created on the fly.
+
+   ---
 
 22. **Test drive error state with react-testing-library**
 
@@ -479,6 +521,8 @@ Checkout individual branches for changes specific to that section of the course.
      - `mockFn.mockRejectedValue(value)`
      - `mockFn.mockRejectedValueOnce(value)`
 
+   ---
+
 23. **Write a custom render function to share code between tests and simplify tests**
 
     ```bash
@@ -489,3 +533,22 @@ Checkout individual branches for changes specific to that section of the course.
 
     We can abstract common render behaviour to a function so that tests are
     easier to read and write.
+
+   ---
+
+24. **Test React components that use the react-router Router Provider with createMemoryHistory**
+
+    ```bash
+    npx jest main
+    ```
+
+    [`__tests__/main-markup.test.js`](./__tests__/main-markup.test.js)
+
+    Components containing components from `react-router-dom` require context in
+    order for them to fucntion. This is provided through a `Router` in
+    applications, so we need to provide this to individual components in order
+    to test them.
+
+    There are two ways to do this, one using `Router` directly and passing in
+    `history` using the `history` module's `createMemoryHistory` function, and
+    the other by using `MemoryRouter` and providing `initialEntries` as a prop.
