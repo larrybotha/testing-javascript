@@ -542,7 +542,7 @@ Checkout individual branches for changes specific to that section of the course.
     npx jest main
     ```
 
-    [`__tests__/main-markup.test.js`](./__tests__/main-markup.test.js)
+    [`__tests__/main.test.js`](./__tests__/main.test.js)
 
     Components containing components from `react-router-dom` require context in
     order for them to fucntion. This is provided through a `Router` in
