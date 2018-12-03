@@ -40,6 +40,7 @@ const renderEditor = () => {
   const titleInput = utils.getByLabelText(/title/i);
   const contentInput = utils.getByLabelText(/content/i);
   const tagsInput = utils.getByLabelText(/tags/i);
+  const submitButton = utils.getByText(/submit/i);
 
   titleInput.value = payload.title;
   contentInput.value = payload.content;
@@ -50,18 +51,23 @@ const renderEditor = () => {
     preDate,
     fakeUser,
     payload,
+    submitButton,
   };
 };
 
 describe('Editor', () => {
   test('renders with correct fields and submit button', async () => {
-    const {getByText, payload, preDate, fakeUser} = renderEditor();
+    const {
+      getByText,
+      payload,
+      preDate,
+      fakeUser,
+      submitButton,
+    } = renderEditor();
 
-    const button = getByText(/submit/i);
+    fireEvent.click(submitButton);
 
-    fireEvent.click(button);
-
-    expect(button).toBeDisabled();
+    expect(submitButton).toBeDisabled();
 
     expect(mockSavePost).toHaveBeenCalledTimes(1);
     expect(mockSavePost).toHaveBeenCalledWith({
@@ -87,15 +93,13 @@ describe('Editor', () => {
     const error = 'test error';
     mockSavePost.mockRejectedValueOnce({ok: false, message: error});
 
-    const {getByText, getByTestId} = renderEditor();
+    const {getByText, getByTestId, submitButton} = renderEditor();
 
-    const button = getByText(/submit/i);
-
-    fireEvent.click(button);
+    fireEvent.click(submitButton);
 
     const postErrorEl = await waitForElement(() => getByTestId('post-error'));
 
     expect(postErrorEl).toHaveTextContent(error);
-    expect(button).not.toBeDisabled();
+    expect(submitButton).not.toBeDisabled();
   });
 });
