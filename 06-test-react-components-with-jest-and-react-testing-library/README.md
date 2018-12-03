@@ -478,3 +478,14 @@ Checkout individual branches for changes specific to that section of the course.
      - `mockFn.mockResolvedValueOnce(value)`
      - `mockFn.mockRejectedValue(value)`
      - `mockFn.mockRejectedValueOnce(value)`
+
+23. **Write a custom render function to share code between tests and simplify tests**
+
+    ```bash
+    npx jest post-editor-08
+    ```
+
+    [`__tests__/post-editor-08-markup.test.js`](./__tests__/post-editor-08-markup.test.js)
+
+    We can abstract common render behaviour to a function so that tests are
+    easier to read and write.
