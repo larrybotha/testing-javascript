@@ -539,10 +539,10 @@ Checkout individual branches for changes specific to that section of the course.
 24. **Test React components that use the react-router Router Provider with createMemoryHistory**
 
     ```bash
-    npx jest main
+    npx jest main-01
     ```
 
-    [`__tests__/main.test.js`](./__tests__/main.test.js)
+    [`__tests__/main-01.test.js`](./__tests__/main-01.test.js)-01
 
     Components containing components from `react-router-dom` require context in
     order for them to fucntion. This is provided through a `Router` in
@@ -556,10 +556,10 @@ Checkout individual branches for changes specific to that section of the course.
 25. **Initialize the `history` object with a bad entry to test the react-router no-match route**
 
     ```bash
-    npx jest main
+    npx jest main-01
     ```
 
-    [`__tests__/main.test.js`](./__tests__/main.test.js)
+    [`__tests__/main-01.test.js`](./__tests__/main-01.test.js)
 
     To test routes that don't match in `react-router` one can either set
     `initialEntries` in `createMemoryHistory` to an invalid path, or directly as
