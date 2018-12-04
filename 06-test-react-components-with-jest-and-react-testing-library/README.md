@@ -553,6 +553,8 @@ Checkout individual branches for changes specific to that section of the course.
     `history` using the `history` module's `createMemoryHistory` function, and
     the other by using `MemoryRouter` and providing `initialEntries` as a prop.
 
+    ---
+
 25. **Initialize the `history` object with a bad entry to test the react-router no-match route**
 
     ```bash
@@ -564,6 +566,8 @@ Checkout individual branches for changes specific to that section of the course.
     To test routes that don't match in `react-router` one can either set
     `initialEntries` in `createMemoryHistory` to an invalid path, or directly as
     a prop on `MemoryRouter`.
+
+    ---
 
 26. **Create a custom render function to simplify tests of react-router components**
 
@@ -585,3 +589,22 @@ Checkout individual branches for changes specific to that section of the course.
 
     This new `render` can also be moved to a test utils file that can be
     imported into tests and used ad-hoc where it makes sense.
+
+    ---
+
+27. **Test a redux connected React Component**
+
+    ```bash
+    npx jest redux-app-01
+    ```
+
+    [`__tests__/redux-app-01.test.js`](./__tests__/redux-app-01.test.js)
+
+    To test components that are connected via `react-redux`s `connect` function,
+    we need to create a store using `redux`s `createStore` function, and wrap
+    our component in `react-redux`s `Provider` component providing it with the
+    store we created.
+
+    By doing this we're not only testing our component, but we're validating
+    that our reducers and actions are working as expected - we're getting better
+    coverage by writing integration tests.
