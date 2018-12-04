@@ -13,7 +13,7 @@ import {MemoryRouter} from 'react-router-dom';
 // passed to Router
 import {createMemoryHistory} from 'history';
 
-import {Main} from '../src/main';
+import {Main} from '../src/main-01';
 
 describe('Main', () => {
   test('can navigate to about (using Router)', () => {

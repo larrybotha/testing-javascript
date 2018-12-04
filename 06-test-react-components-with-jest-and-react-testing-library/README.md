@@ -539,10 +539,10 @@ Checkout individual branches for changes specific to that section of the course.
 24. **Test React components that use the react-router Router Provider with createMemoryHistory**
 
     ```bash
-    npx jest main
+    npx jest main-01
     ```
 
-    [`__tests__/main.test.js`](./__tests__/main.test.js)
+    [`__tests__/main-01.test.js`](./__tests__/main-01.test.js)-01
 
     Components containing components from `react-router-dom` require context in
     order for them to fucntion. This is provided through a `Router` in
@@ -556,11 +556,32 @@ Checkout individual branches for changes specific to that section of the course.
 25. **Initialize the `history` object with a bad entry to test the react-router no-match route**
 
     ```bash
-    npx jest main
+    npx jest main-01
     ```
 
-    [`__tests__/main.test.js`](./__tests__/main.test.js)
+    [`__tests__/main-01.test.js`](./__tests__/main-01.test.js)
 
     To test routes that don't match in `react-router` one can either set
     `initialEntries` in `createMemoryHistory` to an invalid path, or directly as
     a prop on `MemoryRouter`.
+
+26. **Create a custom render function to simplify tests of react-router components**
+
+    ```bash
+    npx jest main-02
+    ```
+
+    [`__tests__/main-02.test.js`](./__tests__/main-02.test.js)
+
+    There's a lot of duplication of rendering `Main` inside a `Router` component
+    configured with its own history in `main-01.test.js`.
+
+    If we wanted to test other components containing `Link` and `Route`
+    components we'd need to duplicate the effort again.
+
+    Instead, we can create a custom `render` function that does the work for us.
+    By allowing that function to accept any React component we can reuse the new
+    `render` function anywhere.
+
+    This new `render` can also be moved to a test utils file that can be
+    imported into tests and used ad-hoc where it makes sense.
