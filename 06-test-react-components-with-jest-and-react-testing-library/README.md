@@ -638,3 +638,27 @@ Checkout individual branches for changes specific to that section of the course.
     If the user doesn't provider their own `store` we create one using the full
     reducer from the app.
 
+    ---
+
+30. **Test a render prop component using a Jest mock function**
+
+    ```bash
+    npx jest toggle
+    ```
+
+    [`__tests__/toggle.test.js`](./__tests__/toggle.test.js)
+
+    To test components that use the render prop strategy, we need to do a few
+    things:
+
+    1. create a `children` function that will be passed to the render prop that
+       receives values from the render prop
+    2. maintain an object that contains the latest values passed to the
+       `children` function.
+    3. assert on that object that the render prop component is doing what it
+       should be
+
+    Most render prop components will use this same pattern, so we can abstract
+    this behaviour in a setup function that can be easily reused.
+
+    ---
