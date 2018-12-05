@@ -608,3 +608,14 @@ Checkout individual branches for changes specific to that section of the course.
     By doing this we're not only testing our component, but we're validating
     that our reducers and actions are working as expected - we're getting better
     coverage by writing integration tests.
+
+28. **Test a redux connected React Component with initialized state**
+
+    ```bash
+    npx jest redux-app-02
+    ```
+
+    [`__tests__/redux-app-02.test.js`](./__tests__/redux-app-02.test.js)
+
+    Initial redux state can be passed through to `createStore` as a second
+    parameter.
