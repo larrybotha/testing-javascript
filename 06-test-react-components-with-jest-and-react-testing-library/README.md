@@ -609,6 +609,8 @@ Checkout individual branches for changes specific to that section of the course.
     that our reducers and actions are working as expected - we're getting better
     coverage by writing integration tests.
 
+    ---
+
 28. **Test a redux connected React Component with initialized state**
 
     ```bash
@@ -619,3 +621,20 @@ Checkout individual branches for changes specific to that section of the course.
 
     Initial redux state can be passed through to `createStore` as a second
     parameter.
+
+    ---
+
+29. **Create a custom render function to simplify tests of redux components**
+
+    ```bash
+    npx jest redux-app-03
+    ```
+
+    [`__tests__/redux-app-03.test.js`](./__tests__/redux-app-03.test.js)
+
+    We can abstract the creation of a redux Provider, and set default parameters
+    such that a user may pass in their own `store` and initial state.
+
+    If the user doesn't provider their own `store` we create one using the full
+    reducer from the app.
+
