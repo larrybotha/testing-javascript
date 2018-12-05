@@ -6,7 +6,7 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {render, fireEvent} from 'react-testing-library';
 
-import {ConnectedCounter, reducer} from '../src/redux-app-01';
+import {ConnectedCounter, reducer} from '../src/redux-app';
 
 describe('ConnectedCounter', () => {
   test('renders with redux defaults', () => {
