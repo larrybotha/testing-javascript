@@ -662,3 +662,24 @@ Checkout individual branches for changes specific to that section of the course.
     this behaviour in a setup function that can be easily reused.
 
     ---
+
+31. **Test React portals with react-testing-library**
+
+    ```bash
+    npx jest modal
+    ```
+
+    [`__tests__/modal.test.js`](./__tests__/modal.test.js)
+
+    Testing React Portals requires no changes to how we write tests. The only
+    difference is that when we query for elements in our tests, they will be
+    scoped to the full DOM.
+
+    If we want to scope our tests specifically to where the React Portal is
+    mounted, we can use `react-testing-library`s `within` and pass in the node
+    we want queries to be scoped to.
+
+    `within` returns the same `.query` and `.get` methods that render does, but
+    scoped to the node it is called with.
+
+    ---
