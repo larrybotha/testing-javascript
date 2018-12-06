@@ -626,3 +626,97 @@ scoped to the node it is called with.
 ```bash
 $ npx jest countdown
 ```
+
+When testing components that use timers, such as `setTimeout` and `setInterval`,
+we don't want to be subject to the length of time those tiemrs take to execute.
+
+To resolve this, Jest allows one to easily mock out timers using
+`jest.useFakeTimers()`.
+
+This alone isn't enough, as when running assertions when timers are running, we
+may end up in a position where an assertion runs before a timer has executed its
+callback.
+
+To resolve this issue we need to wait for all pending timers to execute. Jest
+offers 2 mechanisms to do this:
+
+- `jest.runAllTimers()` - runs all pending timers. If, however, we have a
+    recursive `setTimeout` calling itself, we'll end up in a loop
+- `jest.runOnlyPendingTimers()` - this will run only the pending timers, and no
+    other timers. This can be used for timers that call themselves recursively
+
+### Evaluating different scenarios with timers
+
+`countdown.test.js` is evaluated for each of the following.
+
+#### Scenario 1
+
+- no `clearInterval` in `componentWillUnmount`
+- no `jest.useFakeTimers()`
+- no `jest.runOnlyPendingTimers()`
+
+**Result:** We get a false positive on `setState` not being called, because our
+assertion runs before the last `setState` is actually called.
+
+Evaluating `clearInterval` has been called, however, reveals that we're not
+clearning any timers - a clear indication of a memory leak.
+
+#### Scenario 2
+
+- `clearInterval` in `componentWillUnmount`
+- no `jest.useFakeTimers()`
+- no `jest.runOnlyPendingTimers()`
+
+**Result:** We still get a false positive, because we've done nothing about
+ensuring that our timers have run.
+
+`clearInterval` is at least showing that it's been called, so that's one step in
+the right direction.
+
+#### Scenario 3
+
+- no `clearInterval` in `componentWillUnmount`
+- `jest.useFakeTimers()`
+- no `jest.runOnlyPendingTimers()`
+
+**Result:** We still get a false positive, because we've done nothing about
+ensuring that our timers have run.
+
+The `clearInterval` assertion is still failing.
+
+#### Scenario 3
+
+- no `clearInterval` in `componentWillUnmount`
+- no `jest.useFakeTimers()`
+- `jest.runOnlyPendingTimers()`
+
+**Result:** Still a false positive for setState, but Jest is now indicating that
+we are not mocking timers - i.e., use `jest.useFakeTimers()`
+
+#### Scenario 4
+
+- `clearInterval` in `componentWillUnmount`
+- `jest.useFakeTimers()`
+- no `jest.runOnlyPendingTimers()`
+
+**Result:** Our test is passing, but who knows if in another test run that our
+timer will run after our assertion?
+
+#### Scenario 5
+
+- `clearInterval` in `componentWillUnmount`
+- no `jest.useFakeTimers()`
+- `jest.runOnlyPendingTimers()`
+
+**Result:** Another false positive, and we get a warning from Jest that we're
+not using `jest.useFakeTimers()`
+
+#### Scenario 6
+
+- `clearInterval` in `componentWillUnmount`
+- `jest.useFakeTimers()`
+- `jest.runOnlyPendingTimers()`
+
+**Result:** Our tests pass, and we know that by using `jest.useFakeTimers()`
+that `setInterval` is mocked, and that with `jest.runOnlyPendingTimers()` that
+our assertion will only run once all remaining timers have run.
