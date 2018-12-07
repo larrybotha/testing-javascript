@@ -433,7 +433,7 @@
     changed.
 
     Knowing which files have changed takes time, but we can leverage `husky` and
-    `lint-staged` to evaluate tehse files dynamically.
+    `lint-staged` to evaluate these files dynamically.
 
     `husky` allows us to configure git hooks, and `lint-staged` allows us to run
     commands on staged files. If those commands pass when a commit is attempted,
