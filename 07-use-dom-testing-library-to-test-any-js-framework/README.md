@@ -28,3 +28,73 @@ To manually mount a React component, we need a few things:
    will need to be used after every test to ensure that subsequent tests do not
    contain previously rendered components.
 
+## 2. Use `dom-testing-library` with Preact
+
+```bash
+$ npx jest preact
+```
+
+[`preact.test.js`](./__tests__/preact.test.js)
+
+To manually render Preact components:
+
+1. we need a `render` function
+2. in that render function we need a container on which we can mount our
+   components, so we create one with `document.createElement('div')`
+3. we then use `Preact.render(ui, container)` to render our component on that
+   container
+4. we then need query methods to assert on rendered elements, so we export the
+   result of applying `container` to `dom-testing-library`s
+   `getQueriesForElement` function, spreading it
+5. we return the container, too
+
+
+Preact doesn't render synchronously, as React does. When firing events that
+change state, Preact will only render those updates at the next tick of the
+event loop.
+
+We have 2 strategies available to us handle this:
+
+1. wrap our assertion in a `setTimeout` with a delay of 0
+2. use `async await` with `dom-testing-library`s `wait` function to wait for the
+  next tick of the event loop before asserting
+
+```javascript
+  // wait for render updates using setTimeout
+  fireEvent.click(button)
+
+  setTimeout(() => {
+    expect(something).toBe(true)
+  })
+```
+
+```javascript
+  // wait for render updates using async await
+  test('something', async () => {
+    // ...
+
+    fireEvent.click(button)
+
+    await wait()
+
+    expect(something).toBe(true)
+  })
+```
+
+Using `async await` is cleaner, and we can clean things up further by extending
+`dom-testing-library`s `fireEvent` by making every method `async`:
+
+[`fire-event-async.js`](./__tests__/helpers/fire-event-async.js)
+
+Instead of firing an event, waiting, and then asserting, we have now combined
+the event firing and waiting into one function:
+
+```javascript
+  test('something', async () => {
+    // ...
+
+    await fireEventAsync.click(button)
+
+    expect(something).toBe(true)
+  })
+```
