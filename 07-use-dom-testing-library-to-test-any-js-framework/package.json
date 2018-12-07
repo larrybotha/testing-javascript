@@ -1,0 +1,16 @@
+{
+  "name": "07-use-dom-testing-library-to-test-any-js-framework",
+  "version": "1.0.0",
+  "description": "## 1. Use `dom-testing-library` with React",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dom-testing-library": "3.13.0",
+    "jest": "23.6.0"
+  }
+}
