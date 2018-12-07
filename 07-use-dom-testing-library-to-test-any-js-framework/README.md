@@ -6,6 +6,8 @@
 $ npx jest react
 ```
 
+[`react.test.js`](./__tests__/react.test.js)
+
 To manually mount a React component, we need a few things:
 
 1. a `render` function that will mount our component
