@@ -5,3 +5,24 @@
 ```bash
 $ npx jest react
 ```
+
+To manually mount a React component, we need a few things:
+
+1. a `render` function that will mount our component
+2. we need somewhere to mount our component, so our render function creates a
+   container element using `document.createElement`.
+4. using `ReactDOM.render` we render components into that container
+5. React uses `body` to append all event handlers. We need to account for that,
+   so we append our container to `body` using `document.body.appendChild`
+6. query functions to get elements in the document. We use the exported
+   `getQueriesForElement` from `dom-testing-library` to get all the different
+   queries, and return them in our own `render` function
+7. we also return our container so that we can inspect it directly
+8. because we've mounted our component using React, and appended it to the DOM,
+   we need to do some cleanup. We return a `cleanup` function in render that
+   first unmounts our component using `ReactDOM.unmountComponentAtNode` which
+   accepts the container we mounted our component at. We also use
+   `document.body.removeChild` to remove our component from the DOM. `cleanup`
+   will need to be used after every test to ensure that subsequent tests do not
+   contain previously rendered components.
+
