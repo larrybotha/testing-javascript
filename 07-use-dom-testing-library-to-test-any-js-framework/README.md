@@ -107,3 +107,7 @@ $ npx jest jquery --watch
 
 To test `jquery` components we use `getQueriesForElement` on a section of DOM
 that we can create using jQuery.
+
+## 4. Use `dom-testing-library` with Dojo
+
+Unlikely to ever use Dojo / not interested in using it.
