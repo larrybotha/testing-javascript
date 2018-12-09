@@ -22,7 +22,6 @@ class Counter {
   handleEvent({type}) {
     if (type === 'click') {
       const {counter} = this.refs;
-      debugger;
 
       counter.textContent = Number(counter.textContent) + 1;
     }
