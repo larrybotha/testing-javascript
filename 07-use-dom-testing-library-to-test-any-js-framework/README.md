@@ -98,3 +98,12 @@ the event firing and waiting into one function:
     expect(something).toBe(true)
   })
 ```
+
+## 3. Use `dom-testing-library` with jQuery
+
+```bash
+$ npx jest jquery --watch
+```
+
+To test `jquery` components we use `getQueriesForElement` on a section of DOM
+that we can create using jQuery.
