@@ -123,3 +123,11 @@ to state, HyperApp does this when rendering, too.
 
 To account for this, we need to make our custom `render` function async, and
 `await` the result of rendering before making any assertions or queries.
+
+## 6. Use `dom-testing-library` with AngularJs
+
+Unlikely to ever use AngularJs / not interested in using it.
+
+## 7. Use `dom-testing-library` with Angular
+
+Unlikely to ever use Angular / not interested in using it.
