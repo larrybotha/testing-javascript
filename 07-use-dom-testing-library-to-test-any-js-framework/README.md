@@ -1,5 +1,27 @@
 # Use `dom-testing-library` to test any JS framework
 
+## Takeaways
+
+Testing ui components can be broken down to the following steps:
+
+1. create a `render` function to abstract the repetitive work of rendering the
+   component you will be testing
+2. identify how to render the component to HTML
+3. append that HTML to a container you have control of
+4. use `dom-testing-library` to get all the different functions for getting and
+   querying elements in your container using `getQueriesForElement`
+5. in your test, render the component using your `render` function
+6. if the library renders asynchronously, make your test async, make your
+   `render` function async, and `await` when calling your `render` function
+7. if the library you are using renders updates asynchronously when events
+   trigger updates, use `await` to wait for the update before asserting. Most
+   async updates occur at the end of the current event loop, but not all. If you
+   know updates happen via the event loop, you can simply use `await` and
+   `dom-testing-library`s `wait`. If they are non-deterministically updated,
+   e.g. not using the event loop, you'll need to assert inside `wait`s callback
+   so that Jest keeps asserting until either the UI is updated or the test
+   fails.
+
 ## 1. Use `dom-testing-library` with React
 
 ```bash
