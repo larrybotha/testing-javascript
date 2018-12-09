@@ -23,6 +23,7 @@
     "@babel/preset-env": "7.2.0",
     "@babel/preset-react": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
+    "hyperapp": "1.2.9",
     "jest-dom": "3.0.0",
     "preact": "8.4.1"
   }
