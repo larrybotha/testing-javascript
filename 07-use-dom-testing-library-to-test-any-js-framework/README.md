@@ -131,3 +131,13 @@ Unlikely to ever use AngularJs / not interested in using it.
 ## 7. Use `dom-testing-library` with Angular
 
 Unlikely to ever use Angular / not interested in using it.
+
+## 8. Use `dom-testing-library` with Vue
+
+```bash
+$ npx jest vue --watch
+```
+
+Vue is similar to Preact as it updates state at the end of each event loop. We
+need to use `async / await` when asserting on events that result in state being
+updated.
