@@ -111,3 +111,15 @@ that we can create using jQuery.
 ## 4. Use `dom-testing-library` with Dojo
 
 Unlikely to ever use Dojo / not interested in using it.
+
+## 5. Use `dom-testing-library` with HyperApp
+
+```bash
+$ npx jest hyperapp --watch
+```
+
+As with Preact, HyperApp updates state only at the end of each tick. In addition
+to state, HyperApp does this when rendering, too.
+
+To account for this, we need to make our custom `render` function async, and
+`await` the result of rendering before making any assertions or queries.
