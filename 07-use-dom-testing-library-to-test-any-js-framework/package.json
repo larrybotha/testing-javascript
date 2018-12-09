@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "dom-testing-library": "3.13.0",
+    "from-html": "0.3.3",
     "jest": "23.6.0",
     "jquery": "3.3.1",
     "mithril": "1.1.6",
