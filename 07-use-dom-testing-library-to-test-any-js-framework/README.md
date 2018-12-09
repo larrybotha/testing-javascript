@@ -102,7 +102,7 @@ the event firing and waiting into one function:
 ## 3. Use `dom-testing-library` with jQuery
 
 ```bash
-$ npx jest jquery --watch
+$ npx jest jquery
 ```
 
 To test `jquery` components we use `getQueriesForElement` on a section of DOM
@@ -115,7 +115,7 @@ Unlikely to ever use Dojo / not interested in using it.
 ## 5. Use `dom-testing-library` with HyperApp
 
 ```bash
-$ npx jest hyperapp --watch
+$ npx jest hyperapp
 ```
 
 As with Preact, HyperApp updates state only at the end of each tick. In addition
@@ -135,9 +135,23 @@ Unlikely to ever use Angular / not interested in using it.
 ## 8. Use `dom-testing-library` with Vue
 
 ```bash
-$ npx jest vue --watch
+$ npx jest vue
 ```
 
 Vue is similar to Preact as it updates state at the end of each event loop. We
 need to use `async / await` when asserting on events that result in state being
 updated.
+
+## 9. Use `dom-testing-library` with Mithril
+
+```bash
+$ npx jest mithril
+```
+
+Mithril differs from other libraries that are asynchronous. Mithril doesn't
+update the DOM in a deterministic amount of time, such as at the end of the
+event loop.
+
+To account for this, we need to use a callback inside `dom-testing-library`s
+`wait` function. This will continuously call the assertion within a 4000ms
+window until the assertion passes, otherwise failing the test.
