@@ -164,3 +164,12 @@ $ npx jest svelte
 
 Svelte operates synchronously, as does React, so no need for `async / await` for
 state updates.
+
+## 11. Use `dom-testing-library` with `from-html`
+
+```bash
+$ npx jest from-html
+```
+
+`from-html` leaves it up to the user to manage state etc. Events are handled
+synchronously, so there's no need for `async / await`.
