@@ -155,3 +155,12 @@ event loop.
 To account for this, we need to use a callback inside `dom-testing-library`s
 `wait` function. This will continuously call the assertion within a 4000ms
 window until the assertion passes, otherwise failing the test.
+
+## 10. Use `dom-testing-library` with Svelte
+
+```bash
+$ npx jest svelte
+```
+
+Svelte operates synchronously, as does React, so no need for `async / await` for
+state updates.
