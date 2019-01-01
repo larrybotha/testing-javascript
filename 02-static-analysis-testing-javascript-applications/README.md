@@ -74,10 +74,10 @@ operator:
 ```
 
 ```bash
-$ npm run myscript
-...
+$ npm run myscript -- --some-flag
 
-$ npm run myscript:alpha -- --some-flag
+# or
+$ npm run myscript:alpha
 ```
 
 ## 6. Avoid Common Errors with Flow Type Definitions
