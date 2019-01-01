@@ -19,7 +19,7 @@ https://testingjavascript.com/courses/fundamentals-of-testing-in-javascript
 
 [01-throw-an-error.js ](./01-throw-an-error.js)
 
-```javascript
+```bash
 $ node 01-throw-an-error.js
 ```
 
@@ -29,7 +29,7 @@ Throwing an error when a condition fails is the most fundamental aspect of a tes
 
 [02-abstract-assertions.js](./02-abstract-assertions.js)
 
-```javascript
+```bash
 $ node 02-abstract-assertions.js
 ```
 
@@ -42,7 +42,7 @@ expected value.
 
 [03-encapsulate-and-isolate-tests.js](./03-encapsulate-and-isolate-tests.js)
 
-```javascript
+```bash
 $ node 03-encapsulate-and-isolate-tests.js
 ```
 
@@ -61,7 +61,7 @@ thrown errors from stopping further execution.
 
 [04-support-async-tests.js](./04-support-async-tests.js)
 
-```javascript
+```bash
 $ node 04-support-async-tests.js
 ```
 
@@ -72,7 +72,7 @@ In order to allow async tests to be run, we need our `test` function to be
 
 [05-provide-testing-helpers-as-globals.js](./05-provide-testing-helpers-as-globals.js)
 
-```javascript
+```bash
 $ node --require ./setup-globals.js 05-provide-testing-helpers-as-globals.js
 ```
 
