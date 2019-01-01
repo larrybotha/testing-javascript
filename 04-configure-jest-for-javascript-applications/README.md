@@ -4,8 +4,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [1. [Install and run Jest]](#1-install-and-run-jest)
-- [2. Transpile modules with babel in Jest tests(./02.test.js)](#2-transpile-modules-with-babel-in-jest-tests02testjs)
+- [1. Install and run Jest](#1-install-and-run-jest)
+- [2. Transpile modules with babel in Jest tests](#2-transpile-modules-with-babel-in-jest-tests)
 - [3. Configure Jest’s test environment for testing node or browser code](#3-configure-jests-test-environment-for-testing-node-or-browser-code)
 - [4. Support importing CSS files with Jest’s moduleNameMapper](#4-support-importing-css-files-with-jests-modulenamemapper)
 - [5. Support using webpack CSS modules with Jest](#5-support-using-webpack-css-modules-with-jest)
@@ -31,7 +31,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## 1. [Install and run Jest]
+## 1. Install and run Jest
 
 [01.test.js](./01.test.js)
 
@@ -39,7 +39,9 @@
 $ npx jest 01
 ```
 
-## 2. Transpile modules with babel in Jest tests(./02.test.js)
+## 2. Transpile modules with babel in Jest tests
+
+[02.test.js](./02.test.js)
 
 ```bash
 $ npx jest 02
