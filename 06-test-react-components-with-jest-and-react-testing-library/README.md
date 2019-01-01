@@ -2,6 +2,53 @@
 
 Checkout individual branches for changes specific to that section of the course.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [1. Render a React component for testing](#1-render-a-react-component-for-testing)
+- [2. Use jest-dom for improved assertions](#2-use-jest-dom-for-improved-assertions)
+- [3. Use dom-testing-library to write more maintainable React tests](#3-use-dom-testing-library-to-write-more-maintainable-react-tests)
+- [4. Use `react-testing-library` to render and test React Components](#4-use-react-testing-library-to-render-and-test-react-components)
+- [5. Avoid Memory leaks using react-testing-library’s cleanup function](#5-avoid-memory-leaks-using-react-testing-librarys-cleanup-function)
+- [6. Debug the DOM state during tests using react-testing-library’s debug function](#6-debug-the-dom-state-during-tests-using-react-testing-librarys-debug-function)
+- [7. Test React Component Event Handlers with fireEvent from react-testing-library](#7-test-react-component-event-handlers-with-fireevent-from-react-testing-library)
+- [8. Assert rendered text with react-testing-library](#8-assert-rendered-text-with-react-testing-library)
+- [9. Test prop updates with `react-testing-library`](#9-test-prop-updates-with-react-testing-library)
+- [10. Assert that something is NOT rendered with `react-testing-library`](#10-assert-that-something-is-not-rendered-with-react-testing-library)
+- [11. Test accessibility of rendered React Components with jest-axe](#11-test-accessibility-of-rendered-react-components-with-jest-axe)
+- [12. Mock HTTP Requests with jest.mock in React Component Tests](#12-mock-http-requests-with-jestmock-in-react-component-tests)
+- [13. Mock HTTP Requests with Dependency Injection in React Component Tests](#13-mock-http-requests-with-dependency-injection-in-react-component-tests)
+- [14. Mock react-transition-group in React Component Tests with jest.mock](#14-mock-react-transition-group-in-react-component-tests-with-jestmock)
+- [15. Test componentDidCatch handler error boundaries with react-testing-library](#15-test-componentdidcatch-handler-error-boundaries-with-react-testing-library)
+- [16. Test drive the development of a React Form with react-testing-library](#16-test-drive-the-development-of-a-react-form-with-react-testing-library)
+- [17. Test drive the submission of a React Form with react-testing-library](#17-test-drive-the-submission-of-a-react-form-with-react-testing-library)
+- [18. Test drive the API call of a React Form with react-testing-library](#18-test-drive-the-api-call-of-a-react-form-with-react-testing-library)
+- [19. Test drive mocking react-router’s Redirect component on a form submission](#19-test-drive-mocking-react-routers-redirect-component-on-a-form-submission)
+- [20. Test drive assertions with dates in React](#20-test-drive-assertions-with-dates-in-react)
+- [21. Use generated data in tests with test-data-bot to improve test maintainability](#21-use-generated-data-in-tests-with-test-data-bot-to-improve-test-maintainability)
+- [22. Test drive error state with react-testing-library](#22-test-drive-error-state-with-react-testing-library)
+- [23. Write a custom render function to share code between tests and simplify tests](#23-write-a-custom-render-function-to-share-code-between-tests-and-simplify-tests)
+- [24. Test React components that use the react-router Router Provider with createMemoryHistory](#24-test-react-components-that-use-the-react-router-router-provider-with-creatememoryhistory)
+- [25. Initialize the `history` object with a bad entry to test the react-router no-match route](#25-initialize-the-history-object-with-a-bad-entry-to-test-the-react-router-no-match-route)
+- [26. Create a custom render function to simplify tests of react-router components](#26-create-a-custom-render-function-to-simplify-tests-of-react-router-components)
+- [27. Test a redux connected React Component](#27-test-a-redux-connected-react-component)
+- [28. Test a redux connected React Component with initialized state](#28-test-a-redux-connected-react-component-with-initialized-state)
+- [29. Create a custom render function to simplify tests of redux components](#29-create-a-custom-render-function-to-simplify-tests-of-redux-components)
+- [30. Test a render prop component using a Jest mock function](#30-test-a-render-prop-component-using-a-jest-mock-function)
+- [31. Test React portals with react-testing-library](#31-test-react-portals-with-react-testing-library)
+- [32. Test Unmounting a React Component with react-testing-library](#32-test-unmounting-a-react-component-with-react-testing-library)
+  - [Evaluating different scenarios with timers](#evaluating-different-scenarios-with-timers)
+    - [Scenario 1](#scenario-1)
+    - [Scenario 2](#scenario-2)
+    - [Scenario 3](#scenario-3)
+    - [Scenario 3](#scenario-3-1)
+    - [Scenario 4](#scenario-4)
+    - [Scenario 5](#scenario-5)
+    - [Scenario 6](#scenario-6)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## 1. Render a React component for testing
 
 ```bash

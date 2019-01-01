@@ -2,6 +2,12 @@
 
 Checkout individual branches for changes specific to that section of the course.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 1. **Install and run Cypress**
 
    Once Cypress is installed in a project, we can run it with:

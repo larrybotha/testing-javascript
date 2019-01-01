@@ -1,5 +1,24 @@
 # Use `dom-testing-library` to test any JS framework
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Takeaways](#takeaways)
+- [1. Use `dom-testing-library` with React](#1-use-dom-testing-library-with-react)
+- [2. Use `dom-testing-library` with Preact](#2-use-dom-testing-library-with-preact)
+- [3. Use `dom-testing-library` with jQuery](#3-use-dom-testing-library-with-jquery)
+- [4. Use `dom-testing-library` with Dojo](#4-use-dom-testing-library-with-dojo)
+- [5. Use `dom-testing-library` with HyperApp](#5-use-dom-testing-library-with-hyperapp)
+- [6. Use `dom-testing-library` with AngularJs](#6-use-dom-testing-library-with-angularjs)
+- [7. Use `dom-testing-library` with Angular](#7-use-dom-testing-library-with-angular)
+- [8. Use `dom-testing-library` with Vue](#8-use-dom-testing-library-with-vue)
+- [9. Use `dom-testing-library` with Mithril](#9-use-dom-testing-library-with-mithril)
+- [10. Use `dom-testing-library` with Svelte](#10-use-dom-testing-library-with-svelte)
+- [11. Use `dom-testing-library` with `from-html`](#11-use-dom-testing-library-with-from-html)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Takeaways
 
 Testing ui components can be broken down to the following steps:
