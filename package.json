@@ -1,0 +1,26 @@
+{
+  "name": "testing-javascript",
+  "version": "1.0.0",
+  "description": "Notes and annotations from Kent C. Dodds' Testing Javascript course: https://testingjavascript.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larrybotha/testing-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larrybotha/testing-javascript/issues"
+  },
+  "homepage": "https://github.com/larrybotha/testing-javascript#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "doctoc": "1.4.0",
+    "husky": "1.3.1",
+    "lint-staged": "8.1.0"
+  }
+}
