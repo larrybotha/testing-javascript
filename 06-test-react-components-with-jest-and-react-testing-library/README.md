@@ -256,7 +256,7 @@ $ npx jest greeting
 To test `async/await` we need to
 
 1. import `wait` from `react-testing-libary` to assert `async` responses
-2. mock the api function using `jest.mock` and `jet.fn` so that we can
+2. mock the api function using `jest.mock` and `jest.fn` so that we can
    assert calls on the function
 3. import the mocked api function so that we can use it for assertions
 4. assert the response from calling the api response inside the callback
