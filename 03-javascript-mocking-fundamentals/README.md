@@ -14,7 +14,7 @@
 
 ## 1. Override Object Properties to Mock with Monkey-patching in JavaScript
 
-[01-override-object-props-to-mock-with-monkey-patching.no-framework.test.js](./01-override-object-props-to-mock-with-monkey-patching.no-framework.test.js)
+[01-override-object-props-to-mock-with-monkey-patching.no-framework.js](./01-override-object-props-to-mock-with-monkey-patching.no-framework.js)
 
 ```bash
 $ node 01-override-object-props-to-mock-with-monkey-patching.no-framework.js
