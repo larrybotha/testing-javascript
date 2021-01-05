@@ -18,7 +18,7 @@
     "express": "^4.16.3"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "cross-env": "^5.2.0"
   }
 }
