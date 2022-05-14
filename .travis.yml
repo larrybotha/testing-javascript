@@ -1,8 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - 'node'
-  - '9'
+  - lts/*
 before_install:
   - cd 04-configure-jest-for-javascript-applications/
 install: npm install
