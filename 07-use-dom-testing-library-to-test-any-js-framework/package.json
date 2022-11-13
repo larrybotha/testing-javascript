@@ -12,7 +12,7 @@
   "dependencies": {
     "dom-testing-library": "3.13.0",
     "from-html": "0.3.3",
-    "jest": "23.6.0",
+    "jest": "29.3.1",
     "jquery": "3.5.0",
     "mithril": "1.1.7",
     "react": "16.6.3",
