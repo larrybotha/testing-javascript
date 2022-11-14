@@ -68,7 +68,7 @@
     "test-data-bot": "0.6.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.11.3"
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@reach/component-component": "^0.1.1",
