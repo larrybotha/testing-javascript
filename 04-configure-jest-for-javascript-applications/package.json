@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "7.1.5",
+    "@babel/core": "7.20.7",
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
@@ -23,7 +23,7 @@
     "babel-plugin-emotion": "9.2.11",
     "emotion-theming": "9.2.9",
     "eslint": "5.9.0",
-    "eslint-config-kentcdodds": "^14.0.0",
+    "eslint-config-kentcdodds": "^20.4.0",
     "eslint-import-resolver-jest": "^2.1.1",
     "husky": "1.1.4",
     "identity-obj-proxy": "3.0.0",
