@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "7.1.5",
+    "@babel/core": "7.20.12",
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
