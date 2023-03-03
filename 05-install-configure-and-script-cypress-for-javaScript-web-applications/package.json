@@ -42,7 +42,7 @@
     "babel-plugin-dynamic-import-node": "^2.1.0",
     "babel-plugin-emotion": "^9.2.10",
     "css-loader": "^1.0.0",
-    "cypress": "3.1.1",
+    "cypress": "12.7.0",
     "cypress-testing-library": "2.3.3",
     "eslint": "^5.6.0",
     "eslint-config-cypress": "^0.28.0",
